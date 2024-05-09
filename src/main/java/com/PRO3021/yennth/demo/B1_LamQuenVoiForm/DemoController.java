@@ -1,4 +1,4 @@
-package com.PRO3021.yennth.B1_LamQuenVoiForm;
+package com.PRO3021.yennth.demo.B1_LamQuenVoiForm;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,7 +24,7 @@ public class DemoController {
         // J4 : setAttribute - ${}
         // J5 : Model (ui)-> addAttribute
         model.addAttribute("hi2" , " Xin chao tat ca cac ban");
-        return "/B1/view";
+        return "/demo/B1/view";
     }
 
 }

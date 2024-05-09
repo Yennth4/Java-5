@@ -1,4 +1,4 @@
-package com.PRO3021.yennth.B1_LamQuenVoiForm.controller;
+package com.PRO3021.yennth.demo.B1_LamQuenVoiForm.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -7,11 +7,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-public class LoginForm {
+public class LoginController {
 
     @GetMapping("/login")
     public String hienThi(){
-        return "/B1/login-form";
+        return "/demo/B1/login-form";
     }
 
     @PostMapping("/ket-qua")
@@ -25,6 +25,6 @@ public class LoginForm {
          */
         model.addAttribute("username" , username);
         model.addAttribute("password" , password);
-        return "/B1/ket-qua";
+        return "/demo/B1/ket-qua";
     }
 }

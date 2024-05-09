@@ -12,7 +12,7 @@
         <br>
         <label><b>Password</b></label>
         <input type="password" placeholder="Enter Password" name="pwd">
-
+        <br>
         <button type="submit">Login</button>
     </div>
 </form>
