@@ -18,9 +18,9 @@ public class DangKyController {
         return "/demo/B2/dang-ky";
     }
 
-    @PostMapping("/ket-qua")
+    @PostMapping("/ket-qua2")
     // 1 ham truyen toi da 3 tham so
-    public String ketQua(@Valid DangKyRequest request, BindingResult result, Model model) {
+    public String ketQua( Model model , @Valid DangKyRequest request, BindingResult result) {
 
         if (result.hasErrors()) {
             return "/demo/B2/dang-ky";
@@ -32,6 +32,7 @@ public class DangKyController {
         model.addAttribute("queQuan", request.getQueQuan());
         model.addAttribute("matKhau", request.getMatKhau());
         model.addAttribute("confirmMatKhau", request.getConfirmMatKhau());
+
         return "/demo/B2/ket-qua";
     }
 }

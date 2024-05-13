@@ -1,18 +1,20 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+
 <html>
 <head>
-    <title>Ket qua</title>
+    <title>Login-form</title>
 </head>
 <body>
-<h3>Thong tin dang ki</h3>
-<form>
-    <p style="color: red ; font-size: 13px">Dang ki thong tin thanh cong</p>
+    Thong tin form
+    <p>Mssv: ${mssv}</p>
     <p>Ho ten: ${hoTen}</p>
     <p>Tuoi: ${tuoi}</p>
+    <p>Gioi tinh: ${gioiTinh}</p>
+    <p>Ky hoc: ${kyHoc}</p>
     <p>Nganh hoc: ${nganhHoc}</p>
     <p>Que quan: ${queQuan}</p>
     <p>Mat khau: ${matKhau}</p>
-    <p>Confirm mat khau: ${confirmMatKhau}</p>
-</form>
+    <p>Confirm mat khau: ${cfMatKhau}</p>
 </body>
 </html>

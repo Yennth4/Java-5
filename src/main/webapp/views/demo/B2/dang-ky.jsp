@@ -7,7 +7,7 @@
 <body>
 <h3>Dang ky thong tin</h3>
 <%--@elvariable id="dangKyRequest" type=""--%>
-<form:form modelAttribute="dangKyRequest" action="/ket-qua" method="post">
+<form:form modelAttribute="dangKyRequest" action="/ket-qua2" method="post">
     <p>
         Ho ten: <form:input path="hoTen" placeholder="Nhap ho va ten"/>
         <form:errors path="hoTen" cssClass="error" cssStyle="color: red"/>
