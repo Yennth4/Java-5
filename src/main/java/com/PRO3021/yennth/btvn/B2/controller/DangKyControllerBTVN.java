@@ -19,6 +19,15 @@ public class DangKyControllerBTVN {
 
     @PostMapping("ket-qua3")
     public String ketQua(Model model , @Valid DangKyRequestBTVN request , BindingResult result) {
+        // Kiểm tra mật khẩu và xác nhận mật khẩu có trùng nhau không
+        if (!request.getMatKhau().equals(request.getCfMatKhau())) {
+            result.rejectValue("cfMatKhau", "error.dangKyRequestBTVN", "Mật khẩu và xác nhận mật khẩu không trùng khớp");
+        }
+
+        // Kiểm tra MSSV có bằng "HE130461" không
+        if ("HE130461".equals(request.getMssv())) {
+            result.rejectValue("mssv", "error.dangKyRequestBTVN", "MSSV không hợp lệ");
+        }
         if (result.hasErrors()) {
             return "/btvn/B2/dang-ky";
         }

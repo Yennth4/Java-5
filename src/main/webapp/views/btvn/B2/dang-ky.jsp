@@ -9,37 +9,41 @@
 <h3>Dang ki thong tin BTVN B3</h3>
 <form:form modelAttribute="dangKyRequestBTVN" action="ket-qua3" method="post">
     <p>MSSV: <form:input path="mssv"/></p>
-    <form:errors path="mssv"/>
+    <form:errors cssStyle="color: red" path="mssv" />
 
     <p>Ho ten: <form:input path="hoTen"/></p>
-    <form:errors path="hoTen"/>
+    <form:errors cssStyle="color: red" path="hoTen" />
 
     <p>Tuoi: <form:input path="tuoi"/></p>
-    <form:errors path="tuoi"/>
+    <form:errors cssStyle="color: red" path="tuoi"/>
 
-    <p>Gioi tinh: <form:radiobutton path="gioiTinh" itemValue="nam"/>Nam</p>
-                <form:radiobutton path="gioiTinh" itemValue="nu"/>Nu</p>
-    <form:errors path="gioiTinh"/>
-
-    <p>Ky hoc: <form:select path="kyHoc">
-            <form:options /> Ky 1
-            <form:options /> Ky 2
-            <form:options /> Ky 3
-    </form:select>
+    <p>Gioi tinh:
+        <form:radiobutton path="gioiTinh" value="nam"/>Nam
+        <form:radiobutton path="gioiTinh" value="nu"/>Nu
     </p>
-    <form:errors path="kyHoc"/>
+    <form:errors cssStyle="color: red" path="gioiTinh"/>
+
+    <p>Ky hoc:
+        <form:select path="kyHoc">
+            <form:option disabled="false" value="">Chon ky hoc</form:option>
+            <form:option value="1">Ky 1</form:option>
+            <form:option value="2">Ky 2</form:option>
+            <form:option value="3">Ky 3</form:option>
+        </form:select>
+    </p>
+    <form:errors cssStyle="color: red" path="kyHoc"/>
 
     <p>Nganh hoc: <form:input path="nganhHoc"/></p>
-    <form:errors path="nganhHoc"/>
+    <form:errors cssStyle="color: red" path="nganhHoc"/>
 
     <p>Que quan: <form:input path="queQuan"/></p>
-    <form:errors path="queQuan"/>
+    <form:errors cssStyle="color: red" path="queQuan"/>
 
     <p>Mat khau: <form:input path="matKhau"/></p>
-    <form:errors path="matKhau"/>
+    <form:errors cssStyle="color: red" path="matKhau"/>
 
     <p>Confirm mat khau: <form:input path="cfMatKhau"/></p>
-    <form:errors path="cfMatKhau"/>
+    <form:errors cssStyle="color: red" path="cfMatKhau"/>
 
     <p><form:button type="submit">Submit</form:button></p>
 </form:form>

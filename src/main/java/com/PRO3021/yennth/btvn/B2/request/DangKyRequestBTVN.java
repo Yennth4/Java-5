@@ -16,17 +16,17 @@ public class DangKyRequestBTVN {
     @NotEmpty(message = "Dien mssv")
     private String mssv;
 
-    @NotEmpty(message = "Dien mssv")
+    @NotEmpty(message = "Dien ten")
     private String hoTen;
 
-    @Min(18)
-    @NotNull
+    @Min(value = 18 , message = "Tuoi phai lon hon 18")
+    @NotNull(message = "Dien tuoi la so")
     private Integer tuoi;
 
-//    @NotEmpty(message = "Dien gioiTinh")
+    @NotEmpty(message = "Dien gioiTinh")
     private String gioiTinh;
 
-//    @NotEmpty(message = "Dien kyHoc")
+    @NotEmpty(message = "Dien kyHoc")
     private String kyHoc;
 
     @NotEmpty(message = "Dien nganhHoc")

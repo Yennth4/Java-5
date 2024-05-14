@@ -6,7 +6,8 @@
     <title>Login-form</title>
 </head>
 <body>
-    Thong tin form
+    <b>Thong tin form</b>
+    <p style="color: red">Dang nhap thanh cong</p>
     <p>Mssv: ${mssv}</p>
     <p>Ho ten: ${hoTen}</p>
     <p>Tuoi: ${tuoi}</p>

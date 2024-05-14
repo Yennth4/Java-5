@@ -22,6 +22,10 @@ public class DangKyController {
     // 1 ham truyen toi da 3 tham so
     public String ketQua( Model model , @Valid DangKyRequest request, BindingResult result) {
 
+        if (!request.getMatKhau().equalsIgnoreCase(request.getConfirmMatKhau())) {
+            result.rejectValue("confirmMatKhau" , "error.dangKyRequest" , "Mật khẩu và xác nhận mật khẩu không trùng khớp");
+        }
+
         if (result.hasErrors()) {
             return "/demo/B2/dang-ky";
         }
