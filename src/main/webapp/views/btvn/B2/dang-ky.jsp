@@ -9,10 +9,10 @@
 <h3>Dang ki thong tin BTVN B3</h3>
 <form:form modelAttribute="dangKyRequestBTVN" action="ket-qua3" method="post">
     <p>MSSV: <form:input path="mssv"/></p>
-    <form:errors cssStyle="color: red" path="mssv" />
+    <form:errors cssStyle="color: red" path="mssv"/>
 
     <p>Ho ten: <form:input path="hoTen"/></p>
-    <form:errors cssStyle="color: red" path="hoTen" />
+    <form:errors cssStyle="color: red" path="hoTen"/>
 
     <p>Tuoi: <form:input path="tuoi"/></p>
     <form:errors cssStyle="color: red" path="tuoi"/>

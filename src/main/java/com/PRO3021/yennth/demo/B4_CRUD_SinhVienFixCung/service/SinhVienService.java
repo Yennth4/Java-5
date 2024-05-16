@@ -26,9 +26,9 @@ public class SinhVienService {
         listSinhVien.add(sinhVien);
     }
 
-    public void suaSinhVien(SinhVien sinhVien, String ma) {
+    public void suaSinhVien(SinhVien sinhVien) {
         for (int i = 0; i < listSinhVien.size(); i++) {
-            if (listSinhVien.get(i).getMssv().equalsIgnoreCase(ma)) {
+            if (listSinhVien.get(i).getMssv().equalsIgnoreCase(sinhVien.getMssv())) {
                 listSinhVien.set(i, sinhVien);
             }
         }
@@ -49,6 +49,19 @@ public class SinhVienService {
             }
         }
         return null;
+    }
+
+    public List<SinhVien> searchSinhVien(String keyword) {
+        List<SinhVien> list = new ArrayList<>();
+
+        for (SinhVien sinhVien : listSinhVien) {
+            if (sinhVien.getMssv().toLowerCase().contains(keyword.toLowerCase()) ||
+                    sinhVien.getTen().toLowerCase().contains(keyword.toLowerCase())) {
+                // toLowerCase : chuyen ve chu thuong , contains : chứa
+                list.add(sinhVien);
+            }
+        }
+        return list;
     }
 
 }

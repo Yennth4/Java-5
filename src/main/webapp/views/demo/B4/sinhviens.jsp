@@ -8,13 +8,14 @@
 <body>
 
 <table class="table table-hover table-border">
+
     <h3>Thong tin sinh vien</h3>
-    <form action="add-sinh-vien">
-        Tên: <input name="ten"/>
+    <form action="hien-thi" method="get">
+        Tên hoặc MSSV: <input name="keyword" value="${param.keyword}"/>
         <button type="submit" class="btn btn-info">Search</button>
     </form> <br/>
 
-    <a href="" class="btn btn-primary">Add Student</a>
+    <a href="/sinh-vien/view-add" class="btn btn-primary">Add Student</a>
     <thead>
         <tr>
             <th>STT</th>
@@ -42,9 +43,11 @@
                                              // neu ma2 trung ma1 thi ko can ("ma")
 
 --%>
-                    <a href="/sinh-vien/detail" class="btn btn-warning">Detail</a>
-                    <a href="/sinh-vien/update" class="btn btn-secondary">Update</a>
-                    <a href="/sinh-vien/remove/${sv.mssv}" class="btn btn-danger">Delete</a>
+                    <a href="/sinh-vien/detail/${sv.mssv}" class="btn btn-warning">Detail</a>
+                    <a href="/sinh-vien/view-update/${sv.mssv}" class="btn btn-secondary">Update</a>
+                    <a href="/sinh-vien/remove/${sv.mssv}" class="btn btn-danger"
+                       onclick="return confirm('Bạn có muốn xóa ID ${sv.mssv} không?') ? alert('Xóa thành công ID ${sv.mssv}') : false;">Delete
+                    </a>
                 </td>
             </tr>
         </c:forEach>
