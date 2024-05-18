@@ -37,6 +37,12 @@
                 <td>${gv.gioiTinh}</td>
                 <td>${gv.diaChi}</td>
                 <td>
+                    <a href="/giang-vien/detail/${gv.id}">
+                        <button>Detail</button>
+                    </a>
+                    <a href="/giang-vien/view-update/${gv.id}">
+                        <button>Update</button>
+                    </a>
                     <a href="/giang-vien/remove/${gv.id}">
                         <button>Delete</button>
                     </a>

@@ -66,13 +66,9 @@ public class SinhVienController {
         if (result.hasErrors()) {
             return "/demo/B4/add-sinh-vien";
         }
-
-        SinhVien sinhVien1 = new SinhVien(sinhVien.getMssv(),
-                sinhVien.getTen(), sinhVien.getTuoi(),
-                sinhVien.getDiaChi(), sinhVien.getGioiTinh());
         // sinhvien1 : hung gtri vua lay duoc cua form
 
-        service.themSinhVien(sinhVien1);
+        service.themSinhVien(sinhVien);
         return "redirect:/sinh-vien/hien-thi";
         // return ve trang hien thi
     }
