@@ -34,7 +34,7 @@
                 <td>${gv.ma}</td>
                 <td>${gv.ten}</td>
                 <td>${gv.tuoi}</td>
-                <td>${gv.gioiTinh}</td>
+                <td>${gv.gioiTinh ? "Nam" : "Nu"}</td>
                 <td>${gv.diaChi}</td>
                 <td>
                     <a href="/giang-vien/detail/${gv.id}">

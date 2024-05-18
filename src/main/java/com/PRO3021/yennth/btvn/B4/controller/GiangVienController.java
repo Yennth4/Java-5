@@ -29,13 +29,14 @@ public class GiangVienController {
     @GetMapping("view-add")
     public String viewAdd(Model model) {
         model.addAttribute("giangVien" , new GiangVien());
-        return "/btvn/B4/add-giang-vien";
+        return "/btvn/B4/add-giang-vien.jsp";
     }
 
     @GetMapping("view-update/{id}")
     public String viewUpdate(@PathVariable String id , Model model) {
         GiangVien giangVien = service.detail(id);
         model.addAttribute("gv1" , giangVien);
+        model.addAttribute("giangVien" , new GiangVien());
         return "/btvn/B4/update-giang-vien";
     }
 
@@ -55,7 +56,7 @@ public class GiangVienController {
     @PostMapping("add")
     public String add(@Valid GiangVien giangVien , BindingResult result) {
         if (result.hasErrors()) {
-            return "/btvn/B4/add-giang-vien";
+            return "/btvn/B4/add-giang-vien.jsp";
         }
 
         service.add(giangVien);
@@ -63,7 +64,11 @@ public class GiangVienController {
     }
 
     @PostMapping("update")
-    public String update(GiangVien giangVien) {
+    public String update(@Valid GiangVien giangVien , BindingResult result) {
+        if (result.hasErrors()) {
+            return "/btvn/B4/update-giang-vien";
+        }
+
         service.sua(giangVien);
         return "redirect:/giang-vien/hien-thi";
     }

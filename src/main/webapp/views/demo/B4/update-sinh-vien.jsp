@@ -11,7 +11,11 @@
 <%--@elvariable id="sinhVien" type=""--%>
 <form:form modelAttribute="sinhVien" action="/sinh-vien/update" method="post">
     <h3>Cap nhap thong tin sinh vien</h3>
-    <p>MSSV: <input type="text" name="mssv" value="${sv1.mssv}" readonly/></p>
+    <p>
+        MSSV: <form:input path="mssv" value="${sv1.mssv}" readonly="true"/>
+        <form:errors cssStyle="color: red" path="mssv"/>
+
+    </p>
 
     <p>
         Tên: <form:input path="ten" value="${sv1.ten}"/>

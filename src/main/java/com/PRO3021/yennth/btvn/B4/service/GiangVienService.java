@@ -9,11 +9,11 @@ public class GiangVienService {
     private List<GiangVien> listGV = new ArrayList<>();
 
     public GiangVienService() {
-        listGV.add(new GiangVien("1", "HangNT169", "Tao", 3, true, "Dong bang"));
-        listGV.add(new GiangVien("2", "NguyenVV4", "Cam", 4, true, "Trung du mien nui"));
-        listGV.add(new GiangVien("3", "PhongTT35", "Sau rieng", 5, false, "Mien nam"));
+        listGV.add(new GiangVien("1", "HangNT169", "Tao", 3, false, "HN"));
+        listGV.add(new GiangVien("2", "NguyenVV4", "Cam", 4, true, "Hai Phong"));
+        listGV.add(new GiangVien("3", "PhongTT35", "Sau rieng", 5, true, "Mien nam"));
         listGV.add(new GiangVien("4", "KhanhPG", "Vai", 7, true, "Bac Giang"));
-        listGV.add(new GiangVien("5", "TienNH21", "Mit", 10, false, "Mien bac"));
+        listGV.add(new GiangVien("5", "TienNH21", "Mit", 10, true, "Mien bac"));
     }
 
     public List<GiangVien> getAll() {
