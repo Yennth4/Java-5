@@ -2,8 +2,10 @@ package com.PRO3021.yennth.btvn.B6.controller;
 
 import com.PRO3021.yennth.btvn.B6.entity.ThucVat;
 import com.PRO3021.yennth.btvn.B6.service.ThucVatService;
+import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,6 +20,7 @@ public class ThucVatController {
     @GetMapping("hien-thi")
     public String hienThi(Model model) {
         model.addAttribute("listTV", service.getAll());
+        model.addAttribute("thucVat", new ThucVat());
         return "/btvn/B6/thucvats";
     }
 
@@ -25,6 +28,7 @@ public class ThucVatController {
     public String detailTV(Model model, @PathVariable Integer id) {
         model.addAttribute("tv1", service.detailTV(id));
         model.addAttribute("listTV", service.getAll());
+        model.addAttribute("thucVat", new ThucVat());
         return "/btvn/B6/thucvats";
     }
 
@@ -41,7 +45,12 @@ public class ThucVatController {
     }
 
     @PostMapping("add")
-    public String addTV(ThucVat thucVat) {
+    public String addTV(@Valid ThucVat thucVat , BindingResult result , Model model) {
+        if (result.hasErrors()) {
+            model.addAttribute("listTV", service.getAll());
+            return "/btvn/B6/thucvats";
+        }
+
         service.addTV(thucVat);
         return "redirect:/thuc-vat/B6/hien-thi";
     }

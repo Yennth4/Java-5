@@ -13,11 +13,11 @@
         <p>Tuoi : <input name="tuoi" value="${tv1.tuoi}"></p>
         <p>Loai cay : <input name="loaiCay" value="${tv1.loaiCay}"></p>
         <p>Gioi tinh :
-            <input type="radio" name="gioiTinh" value="true" ${tv.gioiTinh ? 'checked' : ''}> Duc
-            <input type="radio" name="gioiTinh" value="false" ${!tv.gioiTinh ? 'checked' : ''}> Cai
+            <input type="radio" name="gioiTinh" value="true" ${tv1.gioiTinh ? 'checked' : ''}> Duc
+            <input type="radio" name="gioiTinh" value="false" ${!tv1.gioiTinh ? 'checked' : ''}> Cai
         </p>
         <p>Khu vuc : <input name="khuVuc" value="${tv1.khuVuc}"></p>
-        <p><button type="submit">Update</button></p>
+        <p><button type="submit" onclick="return confirm('Ban co muon sua id ${tv1.id} k') ? alert('Cap nhat thanh cong id ${tv1.id}') : false;">Update</button></p>
     </form>
 </body>
 </html>

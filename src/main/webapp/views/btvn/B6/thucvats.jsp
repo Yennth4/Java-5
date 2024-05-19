@@ -14,19 +14,32 @@
     <p>Max : <input name="tuoiMax"></p>
     <p><button type="submit" class="btn btn-primary">Search</button></p>
 </form>
-<form action="/thuc-vat/B6/add" method="post">
+<%--@elvariable id="thucVat" type=""--%>
+<form:form modelAttribute="thucVat" action="/thuc-vat/B6/add"  method="post">
     <h4>Them thuc vat</h4>
-    <p>ID : <input name="id" value="${tv1.id}"></p>
-    <p>Ten : <input name="ten" value="${tv1.ten}"></p>
-    <p>Tuoi : <input name="tuoi" value="${tv1.tuoi}"></p>
-    <p>Loai cay : <input name="loaiCay" value="${tv1.loaiCay}"></p>
-    <p>Gioi tinh :
-        <input type="radio" name="gioiTinh" value="true" ${tv.gioiTinh ? 'checked' : ''}> Duc
-        <input type="radio" name="gioiTinh" value="false" ${!tv.gioiTinh ? 'checked' : ''}> Cai
+    <p>ID : <form:input path="id" value="${tv1.id}" />
+        <form:errors path="id"/>
     </p>
-    <p>Khu vuc : <input name="khuVuc" value="${tv1.khuVuc}"></p>
-    <p><button type="submit" class="btn btn-success">Add</button></p>
-</form>
+    <p>Ten : <form:input path="ten" value="${tv1.ten}" />
+        <form:errors path="ten"/>
+    </p>
+    <p>Tuoi : <form:input path="tuoi" value="${tv1.tuoi}" />
+        <form:errors path="tuoi"/>
+    </p>
+    <p>Loai cay : <form:input path="loaiCay" value="${tv1.loaiCay}" />
+        <form:errors path="loaiCay"/>
+    </p>
+    <p>Gioi tinh :
+        <input type="radio" name="gioiTinh" value="true" ${tv1.gioiTinh ? 'checked' : ''}> Duc
+        <input type="radio" name="gioiTinh" value="false" ${!tv1.gioiTinh ? 'checked' : ''}> Cai
+        <form:errors path="gioiTinh"/>
+    </p>
+    <p>Khu vuc : <form:input path="khuVuc" value="${tv1.khuVuc}" />
+        <form:errors path="khuVuc"/>
+    </p>
+    <p><form:button type="submit" class="btn btn-success"
+        onclick="return confirm('Ban co muon them k') ? alert('Them thanh cong') : false;">Add</form:button></p>
+</form:form>
 <table class="table table-striped table-bordered table-hover">
     <h4>Thong tin thuc vat</h4>
     <thead>
@@ -50,9 +63,9 @@
                 <td>${tv.gioiTinh ? "Duc" : "Cai"}</td>
                 <td>${tv.khuVuc}</td>
                 <td>
-                    <a href="/thuc-vat/B6/detail/${tv.id}" class="btn btn-warning">Detail</a>
-                    <a href="/thuc-vat/B6/view-update/${tv.id}" class="btn btn-secondary">Edit</a>
-                    <a href="/thuc-vat/B6/delete/${tv.id}" class="btn btn-danger">Delete</a>
+                    <a href="/thuc-vat/B6/detail/${tv.id}" class="btn btn-warning" onclick="return confirm('Ban co muon hien thi chi tiet id ${tv.id} k ?') ? alert('Hien thi thanh cong id ${tv.id}') : false;">Detail</a>
+                    <a href="/thuc-vat/B6/view-update/${tv.id}" class="btn btn-secondary" >Edit</a>
+                    <a href="/thuc-vat/B6/delete/${tv.id}" class="btn btn-danger" onclick="return confirm('Ban co muon xoa id ${tv.id} k ?') ? alert('Xoa thanh cong id ${tv.id}') : false;">Delete</a>
                 </td>
             </tr>
         </c:forEach>
