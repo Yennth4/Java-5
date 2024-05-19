@@ -1,5 +1,7 @@
 package com.PRO3021.yennth.btvn.B5.service;
+
 import com.PRO3021.yennth.btvn.B5.entity.B5_GiangVien;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -43,7 +45,7 @@ public class B5_GiangVienService {
     public B5_GiangVien detailGV(String ma) {
         for (int i = 0; i < listGV.size(); i++) {
             if (listGV.get(i).getMaGV().equalsIgnoreCase(ma)) {
-                listGV.get(i);
+                return listGV.get(i);
             }
         }
         return null;

@@ -34,7 +34,7 @@ public class SinhVienController {
 
     @GetMapping("view-add")
     public String viewAdd(Model model) {
-        model.addAttribute("sinhVien" , new SinhVien());
+        model.addAttribute("sinhVien", new SinhVien());
         return "/demo/B4/add-sinh-vien";
     }
 
@@ -42,7 +42,7 @@ public class SinhVienController {
     public String viewUpdate(@PathVariable String ma, Model model) {
         SinhVien sinhVien = service.detailSinhVien(ma);
         model.addAttribute("sv1", sinhVien);
-        model.addAttribute("sinhVien" , new SinhVien());
+        model.addAttribute("sinhVien", new SinhVien());
         return "/demo/B4/update-sinh-vien";
     }
 
@@ -60,13 +60,12 @@ public class SinhVienController {
     }
 
     @PostMapping("add")
-    public String add(@Valid SinhVien sinhVien , BindingResult result) {
+    public String add(@Valid SinhVien sinhVien, BindingResult result) {
         // sinh vien la doi tuong request lay du lieu ben form (DK : name ben form add phai trung voi thuoc tinh cua entity)
 
         if (result.hasErrors()) {
             return "/demo/B4/add-sinh-vien";
         }
-        // sinhvien1 : hung gtri vua lay duoc cua form
 
         service.themSinhVien(sinhVien);
         return "redirect:/sinh-vien/hien-thi";
@@ -74,16 +73,12 @@ public class SinhVienController {
     }
 
     @PostMapping("update")
-    public String update(@Valid SinhVien sinhVien , BindingResult result) {
+    public String update(@Valid SinhVien sinhVien, BindingResult result) {
 
         if (result.hasErrors()) {
             return "/demo/B4/update-sinh-vien";
         }
-
-        SinhVien sinhVien1 = new SinhVien(sinhVien.getMssv(),
-                sinhVien.getTen(), sinhVien.getTuoi(),
-                sinhVien.getDiaChi(), sinhVien.getGioiTinh());
-        service.suaSinhVien(sinhVien1);
+        service.suaSinhVien(sinhVien);
         return "redirect:/sinh-vien/hien-thi";
         // return ve trang hien thi
     }

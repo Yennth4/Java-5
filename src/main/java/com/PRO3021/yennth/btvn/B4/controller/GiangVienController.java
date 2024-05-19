@@ -56,7 +56,7 @@ public class GiangVienController {
     @PostMapping("add")
     public String add(@Valid GiangVien giangVien , BindingResult result) {
         if (result.hasErrors()) {
-            return "/btvn/B4/add-giang-vien.jsp";
+            return "/btvn/B4/add-giang-vien";
         }
 
         service.add(giangVien);
@@ -68,7 +68,6 @@ public class GiangVienController {
         if (result.hasErrors()) {
             return "/btvn/B4/update-giang-vien";
         }
-
         service.sua(giangVien);
         return "redirect:/giang-vien/hien-thi";
     }

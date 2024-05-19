@@ -26,7 +26,7 @@ public class GiangVienService {
 
     public void sua(GiangVien giangVien) {
         for (int i = 0; i < listGV.size(); i++) {
-            if (listGV.get(i).getId().equalsIgnoreCase(giangVien.getMa())) {
+            if (listGV.get(i).getId().equalsIgnoreCase(giangVien.getId())) {
                 listGV.set(i, giangVien);
             }
         }

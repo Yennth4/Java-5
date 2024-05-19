@@ -39,7 +39,7 @@
     </p>
 
     <p>
-        <button class="btn btn-warning" type="submit">Update</button>
+        <button class="btn btn-warning" type="submit" onclick="return confirm('Ban co muon sua ID ${sv1.mssv} khong ?') ? alert('Sua thanh cong ID ${sv1.mssv}') : false;">Update</button>
         <a href="/sinh-vien/hien-thi" class="btn btn-primary">Cancel</a>
     </p>
 </form:form>

@@ -27,7 +27,7 @@
     </p>
 
     <p>Gioi tinh:
-        <input type="radio" name="gioiTinh" value="true" ${gv1.gioiTinh ? "checked" : ""}/> Duc
+        <input type="radio" name="gioiTinh" value="true" checked ${gv1.gioiTinh ? "checked" : ""}/> Duc
         <input type="radio" name="gioiTinh" value="false" ${gv1.gioiTinh == false ? "checked" : ""}/> Cai
         <form:errors cssStyle="color: red" path="gioiTinh"/>
     </p>
