@@ -27,3 +27,23 @@ spring.mvc.view.suffix: .jsp
     <version>2.0.0</version>
 </dependency>
 ```
+
+## Spring Validation 
+```
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-validation</artifactId>
+</dependency>
+```
+
+
+## Form - JSTL 
+```
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+```
+
+
+## Loop - JSTL 
+```
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+```
