@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,8 +23,15 @@ public class B5_GiangVienController {
     List<B5_GiangVien> list = new ArrayList<>();
 
     @GetMapping("hien-thi")
-    public String hienThi(Model model) {
-        list = service.getAll();
+    public String hienThi(@RequestParam(required = false) String searchTen,
+                          @RequestParam(required = false) Integer minAge,
+                          @RequestParam(required = false) Integer maxAge,
+                          Model model) {
+        if ((searchTen == null || searchTen.isEmpty()) && minAge == null && maxAge == null) {
+            list = service.getAll();
+        } else {
+            list = service.searchGiangVien(searchTen, minAge, maxAge);
+        }
         model.addAttribute("giangVien", list);
         model.addAttribute("b5_GiangVien", new B5_GiangVien());
         return "/btvn/B5/giangviens";
@@ -53,7 +61,7 @@ public class B5_GiangVienController {
     }
 
     @PostMapping("add")
-    public String add(@Valid B5_GiangVien giangVien , BindingResult result ,Model model) {
+    public String add(@Valid B5_GiangVien giangVien, BindingResult result, Model model) {
         if (result.hasErrors()) {
             list = service.getAll();
             model.addAttribute("giangVien", list);

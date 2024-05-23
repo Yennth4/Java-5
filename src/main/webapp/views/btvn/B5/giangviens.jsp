@@ -9,14 +9,14 @@
 </head>
 <body>
 <table class="table table-border table-hover table-trible"><br>
-    <form action="">
+    <form action="/giang-vien/B5/hien-thi" method="get">
         <h4>Tim kiem thong tin giang vien</h4>
-        <p>Ten: <input name="searchTen"></p>
+        <p>Ten: <input name="searchTen" value="${param.searchTen}"></p>
         <p>Tuoi: </p>
-        <p>Min: <input name="searchMin"></p>
-        <p>Max: <input name="searchMax"></p>
+        <p>Min: <input name="minAge" value="${param.minAge}"></p>
+        <p>Max: <input name="maxAge" value="${param.maxAge}"></p>
         <p>
-            <button type="button">Search</button>
+            <button type="submit">Search</button>
         </p>
     </form>
     <br><br>

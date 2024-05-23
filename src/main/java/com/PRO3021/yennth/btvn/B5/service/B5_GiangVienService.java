@@ -50,4 +50,18 @@ public class B5_GiangVienService {
         }
         return null;
     }
+
+    public List<B5_GiangVien> searchGiangVien(String ten, Integer minAge, Integer maxAge) {
+        List<B5_GiangVien> result = new ArrayList<>();
+        for (B5_GiangVien gv : listGV) {
+            boolean matchesTen = (ten == null || ten.isEmpty()) ||
+                    gv.getTen().toLowerCase().contains(ten.toLowerCase());
+            boolean matchesAge = (minAge == null || gv.getTuoi() >= minAge) &&
+                    (maxAge == null || gv.getTuoi() <= maxAge);
+            if (matchesTen && matchesAge) {
+                result.add(gv);
+            }
+        }
+        return result;
+    }
 }
