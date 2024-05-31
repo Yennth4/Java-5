@@ -22,7 +22,6 @@
         <button type="submit">Add</button>
     </p>
 </form>
-<br>
 <p>
 <h3>DANH SACH LOP HOC</h3></p>
 <table border="1">
@@ -46,6 +45,25 @@
         </tr>
     </c:forEach>
 </table>
+<form action="/lop-hoc/sinh-vien/add" method="post">
+    <p><h4>THEM SINH VIEN</h4></p>
+    <p>ID sinh vien: <input type="text" name="id"></p>
+    <p>MSSV: <input type="text" name="mssv"></p>
+    <p>Tên sinh vien: <input type="text" name="name"></p>
+    <p>Dia chi: <input type="text" name="diaChi"></p>
+    <p>Ma lop:
+        <select name="">
+            <option disabled selected>Ma lop</option>
+            <c:forEach items="${listLH}" var="lh">
+                <option value="${lh.id}" ${lh.id == sinhVien.lopHoc.id ? 'selected' : ''}>${lh.name}</option>
+            </c:forEach>
+        </select>
+    </p>
+    <p>
+        <button type="submit">Add</button>
+    </p>
+</form>
+
 <table border="1">
     <p>
     <h3>DANH SACH SINH VIEN</h3></p>
