@@ -44,6 +44,24 @@ public class B10_PhongBanController {
         return "redirect:/B10/hien-thi";
     }
 
+    @GetMapping("loai-phong-ban/detail/{id}")
+    private String detailLoaiPhongBan(@PathVariable Integer id, Model model) {
+        model.addAttribute("lpb", serviceLoaiPhongBan.findById(id).orElse(null));
+        model.addAttribute("listLoaiPhongBan", serviceLoaiPhongBan.findAll());
+        model.addAttribute("b10_LoaiPhongBan", new B10_LoaiPhongBan());
+        model.addAttribute("listPhongBan", servicePhongBan.findAll());
+        return "/btvn/B10/views";
+    }
+
+    @GetMapping("phong-ban/detail/{id}")
+    private String detailPhongBan(@PathVariable Integer id, Model model) {
+        model.addAttribute("pb", servicePhongBan.findById(id).orElse(null));
+        model.addAttribute("listLoaiPhongBan", serviceLoaiPhongBan.findAll());
+        model.addAttribute("b10_LoaiPhongBan", new B10_LoaiPhongBan());
+        model.addAttribute("listPhongBan", servicePhongBan.findAll());
+        return "/btvn/B10/views";
+    }
+
     @GetMapping("loai-phong-ban/view-update/{id}")
     private String viewUpdateLoaiPhongBan(@PathVariable Integer id, Model model) {
         model.addAttribute("lpb", serviceLoaiPhongBan.findById(id).orElse(null));
@@ -64,12 +82,6 @@ public class B10_PhongBanController {
             return "/btvn/B10/views";
         }
 
-        if (serviceLoaiPhongBan.findByMa(loaiPhongBan.getMa()).isPresent()) {
-            result.rejectValue("ma", "error.loaiPhongBan", "Mã đã tồn tại");
-            model.addAttribute("listLoaiPhongBan", serviceLoaiPhongBan.findAll());
-            model.addAttribute("listPhongBan", servicePhongBan.findAll());
-            return "/btvn/B10/views";
-        }
         serviceLoaiPhongBan.save(loaiPhongBan);
         return "redirect:/B10/hien-thi";
     }
@@ -91,5 +103,4 @@ public class B10_PhongBanController {
         servicePhongBan.save(phongBan);
         return "redirect:/B10/hien-thi";
     }
-
 }

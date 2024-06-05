@@ -17,9 +17,11 @@
 
     <button>Search</button>
 </form>
-<a href="/giang-vien/view-add"><button>add</button></a>
- <button>Giảng viên nữ</button>
-<table border="1" >
+<a href="/giang-vien/view-add">
+    <button>ADD</button>
+</a>
+<button>Giảng viên nữ</button>
+<table border="1">
     <tr>
         <td>ID</td>
         <td>Mã</td>
@@ -39,19 +41,17 @@
             <td>${gv.diaChi}</td>
             <td>
                 <a href="/giang-vien/detail/${gv.id}">
-                    <button>Detail</button></a>
+                    <button>Detail</button>
+                </a>
                 <a href="/giang-vien/view-update/${gv.id}">
-                    <button>Edit</button></a>
+                    <button>Edit</button>
+                </a>
                 <a href="/giang-vien/remove/${gv.id}">
-                    <button>Remove</button></a>
+                    <button>Remove</button>
+                </a>
             </td>
         </tr>
     </c:forEach>
-
-    </a>
 </table>
-
-
-
 </body>
 </html>

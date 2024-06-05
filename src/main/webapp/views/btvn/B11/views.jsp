@@ -25,14 +25,14 @@
 
 
 <%--UPDATE CO SO--%>
-<form action="/B11/co-so/update" method="post">
+<form action="/B11/co-so/add" method="post">
     <h3>CO SO</h3></p>
     <p>Ma : <input name="ma" value="${cs.ma}"></p>
     <p>Ten tai khoan ngan hang :
-        <select name="" >
-            <option selected disabled>Chon ten tai khoan</option>
+        <select name="tk" >
             <c:forEach items="${listTKNH}" var="tk">
-                <option value="${tk.ma}" ${tk.ma == cs.tk.hoTen ? 'selected' : ''} >${tk.hoTen}</option>
+                <option value="${tk.ma}" >${tk.hoTen}</option>
+<%--              ${tk.ma == cs.tk.hoTen ? 'selected' : ''}  --%>
             </c:forEach>
         </select>
     </p>
@@ -44,7 +44,7 @@
         <input type="radio" name="trangThai" value="0" ${cs.trangThai == 0 ? 'checked' : ''}> Off
     </p>
     <p>
-        <button type="submit">Update</button>
+        <button type="submit">Add</button>
     </p>
 </form>
 

@@ -5,6 +5,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -27,8 +29,9 @@ public class B10_PhongBan {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "loai_phong_ban_id")
-    private Integer loaiPhongBan;
+    @ManyToOne
+    @JoinColumn(name = "loai_phong_ban_id" , referencedColumnName = "id")
+    private B10_LoaiPhongBan loaiPhongBan;
 
     private String ma;
 

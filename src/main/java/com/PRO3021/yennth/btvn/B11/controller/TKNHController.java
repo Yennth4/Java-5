@@ -61,6 +61,12 @@ public class TKNHController {
         return "redirect:/B11/hien-thi";
     }
 
+    @PostMapping("co-so/add")
+    public String addCoSo(CoSo coSo) {
+        serviceCoSo.save(coSo);
+        return "redirect:/B11/hien-thi";
+    }
+
     @PostMapping("tk/update")
     public String updateTKNH(TKNH tk) {
         // save giong add
