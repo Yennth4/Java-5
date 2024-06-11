@@ -163,84 +163,104 @@ public class BanHangController {
     // DETAIL
     @GetMapping("chiTietSanPham/detail/{id}")
     private String detailChiTietSanPham(@PathVariable Integer id, Model model) {
-        model.addAttribute("chiTietSanPham", serviceChiTietSanPham.findById(id));
+        model.addAttribute("chiTietSanPham", serviceChiTietSanPham.findById(id).orElse(null));
+        model.addAttribute("listMauSac", serviceMauSac.findAll());
+        model.addAttribute("listSanPham", serviceSanPham.findAll());
+        model.addAttribute("listDongSanPham", serviceDongSanPham.findAll());
         return "/ass/update/chiTietSanPhamUpdate";
     }
 
     @GetMapping("chucVu/detail/{id}")
     private String detailChucVu(@PathVariable Integer id, Model model) {
-        model.addAttribute("chucVu", serviceChucVu.findById(id));
+        model.addAttribute("chucVu", serviceChucVu.findById(id).orElse(null));
         return "/ass/update/chucVuUpdate";
     }
 
     @GetMapping("cuaHang/detail/{id}")
     private String detailCuaHang(@PathVariable Integer id, Model model) {
-        model.addAttribute("cuaHang", serviceCuaHang.findById(id));
+        model.addAttribute("cuaHang", serviceCuaHang.findById(id).orElse(null));
         return "/ass/update/cuaHangUpdate";
     }
 
     @GetMapping("dongSanPham/detail/{id}")
     private String detailDongSanPham(@PathVariable Integer id, Model model) {
-        model.addAttribute("dongSanPham", serviceDongSanPham.findById(id));
+        model.addAttribute("dongSanPham", serviceDongSanPham.findById(id).orElse(null));
         return "/ass/update/dongSanPhamUpdate";
     }
 
     @GetMapping("gioHang/detail/{id}")
     private String detailGioHang(@PathVariable Integer id, Model model) {
-        model.addAttribute("gioHang", serviceGioHang.findById(id));
+        model.addAttribute("gioHang", serviceGioHang.findById(id).orElse(null));
+        model.addAttribute("listKhachHang", serviceKhachHang.findAll());
+        model.addAttribute("listNhanVien", serviceNhanVien.findAll());
         return "/ass/update/gioHangUpdate";
     }
 
     @GetMapping("gioHangChiTiet/detail/{id}")
     private String detailGioHangChiTiet(@PathVariable Integer id, Model model) {
-        model.addAttribute("gioHangChiTiet", serviceGioHangChiTiet.findById(id));
+        model.addAttribute("gioHangChiTiet", serviceGioHangChiTiet.findById(id).orElse(null));
+        model.addAttribute("listChiTietSanPham", serviceChiTietSanPham.findAll());
+        model.addAttribute("listGioHang", serviceGioHang.findAll());
         return "/ass/update/gioHangChiTietUpdate";
     }
 
     @GetMapping("hoaDon/detail/{id}")
     private String detailHoaDon(@PathVariable Integer id, Model model) {
-        model.addAttribute("hoaDon", serviceHoaDon.findById(id));
+        model.addAttribute("hoaDon", serviceHoaDon.findById(id).orElse(null));
+        model.addAttribute("listKhachHang", serviceKhachHang.findAll());
+        model.addAttribute("listNhanVien", serviceNhanVien.findAll());
         return "/ass/update/hoaDonUpdate";
     }
 
     @GetMapping("hoaDonChiTiet/detail/{id}")
     private String detailHoaDonChiTiet(@PathVariable Integer id, Model model) {
-        model.addAttribute("hoaDonChiTiet", serviceHoaDonChiTiet.findById(id));
+        model.addAttribute("hoaDonChiTiet", serviceHoaDonChiTiet.findById(id).orElse(null));
+        model.addAttribute("listHoaDon", serviceHoaDon.findAll());
+        model.addAttribute("listChiTietSanPham", serviceChiTietSanPham.findAll());
+        model.addAttribute("listGioHang", serviceGioHang.findAll());
         return "/ass/update/hoaDonChiTietUpdate";
     }
 
     @GetMapping("khachHang/detail/{id}")
     private String detailKhachHang(@PathVariable Integer id, Model model) {
-        model.addAttribute("khachHang", serviceKhachHang.findById(id));
+        model.addAttribute("khachHang", serviceKhachHang.findById(id).orElse(null));
         return "/ass/update/khachHangUpdate";
     }
 
     @GetMapping("mauSac/detail/{id}")
     private String detailMauSac(@PathVariable Integer id, Model model) {
-        model.addAttribute("mauSac", serviceMauSac.findById(id));
+        model.addAttribute("mauSac", serviceMauSac.findById(id).orElse(null));
         return "/ass/update/mauSacUpdate";
     }
 
     @GetMapping("sanPham/detail/{id}")
     private String detailSanPham(@PathVariable Integer id, Model model) {
-        model.addAttribute("sanPham", serviceSanPham.findById(id));
+        model.addAttribute("sanPham", serviceSanPham.findById(id).orElse(null));
         return "/ass/update/sanPhamUpdate";
     }
 
     @GetMapping("nhanVien/detail/{id}")
     private String detailNhanVien(@PathVariable Integer id, Model model) {
-        model.addAttribute("nhanVien", serviceNhanVien.findById(id));
+        model.addAttribute("nhanVien", serviceNhanVien.findById(id).orElse(null));
+        model.addAttribute("listChucVu", serviceChucVu.findAll());
+        model.addAttribute("listCuaHang", serviceCuaHang.findAll());
+        System.out.println("jjjjjjjjjjj" + serviceChucVu.findAll().size());
         return "/ass/update/nhanVienUpdate";
     }
 
-    //    VIEW ADD
+    //   VIEW ADD
     @GetMapping("nhanVien/view-add")
-    private String nhanVienViewAdd() {
+    private String nhanVienViewAdd(Model model) {
+        model.addAttribute("listChucVu", serviceChucVu.findAll());
+        model.addAttribute("listCuaHang", serviceCuaHang.findAll());
         return "/ass/add/nhanVienAdd";
     }
 
     @GetMapping("chiTietSanPham/view-add")
-    private String chiTietSanPhamViewAdd() {
+    private String chiTietSanPhamViewAdd(Model model) {
+        model.addAttribute("listMauSac", serviceMauSac.findAll());
+        model.addAttribute("listSanPham", serviceSanPham.findAll());
+        model.addAttribute("listDongSanPham", serviceDongSanPham.findAll());
         return "/ass/add/chiTietSanPhamAdd";
     }
 
@@ -260,22 +280,31 @@ public class BanHangController {
     }
 
     @GetMapping("gioHang/view-add")
-    private String gioHangViewAdd() {
+    private String gioHangViewAdd(Model model) {
+        model.addAttribute("listKhachHang", serviceKhachHang.findAll());
+        model.addAttribute("listNhanVien", serviceNhanVien.findAll());
         return "/ass/add/gioHangAdd";
     }
 
     @GetMapping("gioHangChiTiet/view-add")
-    private String gioHangChiTietViewAdd() {
+    private String gioHangChiTietViewAdd(Model model) {
+        model.addAttribute("listChiTietSanPham", serviceChiTietSanPham.findAll());
+        model.addAttribute("listGioHang", serviceGioHang.findAll());
         return "/ass/add/gioHangChiTietAdd";
     }
 
     @GetMapping("hoaDon/view-add")
-    private String hoaDonViewAdd() {
+    private String hoaDonViewAdd(Model model) {
+        model.addAttribute("listKhachHang", serviceKhachHang.findAll());
+        model.addAttribute("listNhanVien", serviceNhanVien.findAll());
         return "/ass/add/hoaDonAdd";
     }
 
     @GetMapping("hoaDonChiTiet/view-add")
-    private String hoaDonChiTietViewAdd() {
+    private String hoaDonChiTietViewAdd(Model model) {
+        model.addAttribute("listHoaDon", serviceHoaDon.findAll());
+        model.addAttribute("listChiTietSanPham", serviceChiTietSanPham.findAll());
+        model.addAttribute("listGioHang", serviceGioHang.findAll());
         return "/ass/add/hoaDonChiTietAdd";
     }
 
@@ -296,74 +325,88 @@ public class BanHangController {
 
     // VIEW UPDATE
     @GetMapping("nhanVien/view-update/{id}")
-    private String nhanVienViewAdd(@PathVariable Integer id, Model model) {
-        model.addAttribute("nhanVien", serviceNhanVien.findById(id));
+    private String nhanVienViewUpdate(@PathVariable Integer id, Model model) {
+        model.addAttribute("nhanVien", serviceNhanVien.findById(id).orElse(null));
+        model.addAttribute("listChucVu", serviceChucVu.findAll());
+        model.addAttribute("listCuaHang", serviceCuaHang.findAll());
         return "/ass/update/nhanVienUpdate";
     }
 
     @GetMapping("chiTietSanPham/view-update/{id}")
     private String chiTietSanPhamViewUpdate(@PathVariable Integer id, Model model) {
-        model.addAttribute("chiTietSanPham", serviceChiTietSanPham.findById(id));
+        model.addAttribute("chiTietSanPham", serviceChiTietSanPham.findById(id).orElse(null));
+        model.addAttribute("listMauSac", serviceMauSac.findAll());
+        model.addAttribute("listSanPham", serviceSanPham.findAll());
+        model.addAttribute("listDongSanPham", serviceDongSanPham.findAll());
         return "/ass/update/chiTietSanPhamUpdate";
     }
 
     @GetMapping("chucVu/view-update/{id}")
     private String chucVuViewUpdate(@PathVariable Integer id, Model model) {
-        model.addAttribute("chucVu", serviceChucVu.findById(id));
+        model.addAttribute("chucVu", serviceChucVu.findById(id).orElse(null));
         return "/ass/update/chucVuUpdate";
     }
 
     @GetMapping("cuaHang/view-update/{id}")
     private String cuaHangViewUpdate(@PathVariable Integer id, Model model) {
-        model.addAttribute("cuaHang", serviceCuaHang.findById(id));
+        model.addAttribute("cuaHang", serviceCuaHang.findById(id).orElse(null));
         return "/ass/update/cuaHangUpdate";
     }
 
     @GetMapping("dongSanPham/view-update/{id}")
     private String dongSanPhamViewUpdate(@PathVariable Integer id, Model model) {
-        model.addAttribute("dongSanPham", serviceDongSanPham.findById(id));
+        model.addAttribute("dongSanPham", serviceDongSanPham.findById(id).orElse(null));
         return "/ass/update/dongSanPhamUpdate";
     }
 
     @GetMapping("gioHang/view-update/{id}")
     private String gioHangViewUpdate(@PathVariable Integer id, Model model) {
-        model.addAttribute("gioHang", serviceGioHang.findById(id));
+        model.addAttribute("gioHang", serviceGioHang.findById(id).orElse(null));
+        model.addAttribute("listKhachHang", serviceKhachHang.findAll());
+        model.addAttribute("listNhanVien", serviceNhanVien.findAll());
         return "/ass/update/gioHangUpdate";
     }
 
     @GetMapping("gioHangChiTiet/view-update/{id}")
     private String gioHangChiTietViewUpdate(@PathVariable Integer id, Model model) {
-        model.addAttribute("gioHangChiTiet", serviceGioHangChiTiet.findById(id));
+        model.addAttribute("gioHangChiTiet", serviceGioHangChiTiet.findById(id).orElse(null));
+        model.addAttribute("listChiTietSanPham", serviceChiTietSanPham.findAll());
+        model.addAttribute("listGioHang", serviceGioHang.findAll());
         return "/ass/update/gioHangChiTietUpdate";
     }
 
     @GetMapping("hoaDon/view-update/{id}")
     private String hoaDonViewUpdate(@PathVariable Integer id, Model model) {
-        model.addAttribute("hoaDon", serviceHoaDon.findById(id));
+        model.addAttribute("hoaDon", serviceHoaDon.findById(id).orElse(null));
+        model.addAttribute("listKhachHang", serviceKhachHang.findAll());
+        model.addAttribute("listNhanVien", serviceNhanVien.findAll());
         return "/ass/update/hoaDonUpdate";
     }
 
     @GetMapping("hoaDonChiTiet/view-update/{id}")
     private String hoaDonChiTietViewUpdate(@PathVariable Integer id, Model model) {
-        model.addAttribute("hoaDonChiTiet", serviceHoaDonChiTiet.findById(id));
+        model.addAttribute("hoaDonChiTiet", serviceHoaDonChiTiet.findById(id).orElse(null));
+        model.addAttribute("listHoaDon", serviceHoaDon.findAll());
+        model.addAttribute("listChiTietSanPham", serviceChiTietSanPham.findAll());
+        model.addAttribute("listGioHang", serviceGioHang.findAll());
         return "/ass/update/hoaDonChiTietUpdate";
     }
 
     @GetMapping("khachHang/view-update/{id}")
     private String khachHangViewUpdate(@PathVariable Integer id, Model model) {
-        model.addAttribute("khachHang", serviceKhachHang.findById(id));
+        model.addAttribute("khachHang", serviceKhachHang.findById(id).orElse(null));
         return "/ass/update/khachHangUpdate";
     }
 
     @GetMapping("mauSac/view-update/{id}")
     private String mauSacViewUpdate(@PathVariable Integer id, Model model) {
-        model.addAttribute("mauSac", serviceMauSac.findById(id));
+        model.addAttribute("mauSac", serviceMauSac.findById(id).orElse(null));
         return "/ass/update/mauSacUpdate";
     }
 
     @GetMapping("sanPham/view-update/{id}")
     private String sanPhamViewUpdate(@PathVariable Integer id, Model model) {
-        model.addAttribute("sanPham", serviceSanPham.findById(id));
+        model.addAttribute("sanPham", serviceSanPham.findById(id).orElse(null));
         return "/ass/update/sanPhamUpdate";
     }
 

@@ -2,9 +2,14 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html>
 <head>
-    <title>SAN PHAM</title>
+    <title>CHUC </title>
 </head>
 <body>
-<p><h3>SAN PHAM</h3></p>
+<p><h3>CHUC VU</h3></p>
+<form action="/chucVu/update" method="post">
+    <p>Ma: <input name="ma" value="${chucVu.ma}"></p>
+    <p>Ten: <input name="ten" value="${chucVu.ten}"></p>
+    <p><button type="submit">Update</button></p>
+</form>
 </body>
 </html>

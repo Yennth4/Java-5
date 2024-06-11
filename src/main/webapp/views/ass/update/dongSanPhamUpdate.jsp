@@ -5,6 +5,14 @@
     <title>DONG SAN PHAM</title>
 </head>
 <body>
-<p><h3>DONG SAN PHAM</h3></p>
+<p>
+<h3>DONG SAN PHAM</h3></p>
+<form action="/dongSanPham/update" method="post">
+    <p>Ma: <input name="ma" value="${dongSanPham.ma}"></p>
+    <p>Ten: <input name="ten" value="${dongSanPham.ten}"></p>
+    <p>
+        <button type="submit">Update</button>
+    </p>
+</form>
 </body>
 </html>

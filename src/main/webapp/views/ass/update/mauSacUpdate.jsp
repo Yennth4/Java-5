@@ -6,5 +6,10 @@
 </head>
 <body>
 <p><h3>MAU SAC</h3></p>
+<form action="/mauSac/update" method="post">
+    <p>Ma: <input name="ma" value="${mauSac.ma}"></p>
+    <p>Ten: <input name="ten" value="${mauSac.ten}"></p>
+    <p><button type="submit">Update</button></p>
+</form>
 </body>
 </html>

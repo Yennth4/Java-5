@@ -43,7 +43,7 @@ public class ChiTietSanPham {
     private DongSanPham dongSanPham;
 
     @Column(name = "NamBH")
-    private Integer namBH;
+    private Integer namBaoHanh;
 
     @Column(name = "MoTa")
     private String moTa;

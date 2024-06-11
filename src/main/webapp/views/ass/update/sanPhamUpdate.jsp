@@ -6,5 +6,10 @@
 </head>
 <body>
 <p><h3>SAN PHAM</h3></p>
+<form action="/sanPham/update" method="post">
+    <p>Ma: <input name="ma" value="${sanPham.ma}"></p>
+    <p>Ten: <input name="ten" value="${sanPham.ten}"></p>
+    <p><button type="submit">Update</button></p>
+</form>
 </body>
 </html>
