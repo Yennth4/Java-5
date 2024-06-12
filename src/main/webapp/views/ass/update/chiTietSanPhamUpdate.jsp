@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>CHI TIET SAN PHAM</title>
@@ -10,8 +11,8 @@
 <form action="/chiTietSanPham/update" method="post">
     <p>San pham:
         <select name="sanPham">
-            <c:forEach items="${listSanPham}" var="sp">
-                <option value="${sp.id}" ${sp.id == chiTietSanPham.sanPham.id ? 'selected' : ''}>${sp.ten}</option>
+            <c:forEach items="${listSanPham}" var="sanPham">
+                <option value="${sanPham.id}" ${sanPham.id == chiTietSanPham.sanPham.id ? 'selected' : ''}>${sanPham.ten}</option>
             </c:forEach>
         </select>
     </p>

@@ -1,17 +1,17 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>CHI TIET SAN PHAM</title>
 </head>
 <body>
-<p>
-<h3>CHI TIET SAN PHAM</h3></p>
+<p><h3>CHI TIET SAN PHAM</h3></p>
 <form action="/chiTietSanPham/add" method="post">
     <p>San pham:
         <select name="sanPham">
-            <c:forEach items="${listSanPham}" var="sp">
-                <option value="${sp.id}">${sp.ten}</option>
+            <c:forEach items="${listSanPham}" var="sanPham">
+                <option value="${sanPham.id}">${sanPham.ten}</option>
             </c:forEach>
         </select>
     </p>
@@ -34,9 +34,7 @@
     <p>So luong ton: <input name="soLuongTon"></p>
     <p>Gia nhap: <input name="giaNhap"></p>
     <p>Gia ban: <input name="giaBan"></p>
-    <p>
-        <button type="submit">ADD</button>
-    </p>
+    <p><button type="submit">ADD</button></p>
 </form>
 </body>
 </html>
