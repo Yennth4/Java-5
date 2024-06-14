@@ -7,17 +7,17 @@
 <body>
 <form action="/hoa-don/add1" method="post">
     <p><h3>QUAN LY HOA DON</h3></p>
-    <p>Id: <input name="id" value="${de3HoaDon.id}" readonly></p>
-    <p>Ma: <input name="ma" value="${de3HoaDon.ma}"></p>
-    <p>Ghi chu: <input name="ghiChu" value="${de3HoaDon.ghiChu}"></p>
+    <p>Id: <input name="id" value="${hoaDon.id}" readonly></p>
+    <p>Ma: <input name="ma" value="${hoaDon.ma}"></p>
+    <p>Ghi chu: <input name="ghiChu" value="${hoaDon.ghiChu}"></p>
     <p>Trang thai:
-        <input type="radio" name="trangThai" value="1" ${de3HoaDon.trangThai == "1" ? 'checked' : ''}> Hoat dong
-        <input type="radio" name="trangThai" value="2" ${de3HoaDon.trangThai == "2" ? 'checked' : ''}> Khong hoat dong
+        <input type="radio" name="trangThai" value="1" ${hoaDon.trangThai == "1" ? 'checked' : ''}> Hoat dong
+        <input type="radio" name="trangThai" value="2" ${hoaDon.trangThai == "2" ? 'checked' : ''}> Khong hoat dong
     </p>
     <p>Khach hang:
-        <select name="de3KhachHang">
+        <select name="khachHang">
             <c:forEach items="${listKhachHang}" var="kh">
-                <option value="${kh.id}" ${kh.id == de3HoaDon.de3KhachHang.id ? 'selected' : ''}>${kh.ten}</option>
+                <option value="${kh.id}" ${kh.id == hoaDon.khachHang.id ? 'selected' : ''}>${kh.ten}</option>
             </c:forEach>
         </select>
     </p>
@@ -32,18 +32,18 @@
         <th>Khach hang</th>
         <th>Action</th>
     </tr>
-    <c:forEach items="${listHoaDon}" var="de3HoaDon" varStatus="i">
+    <c:forEach items="${listHoaDon}" var="hoaDon" varStatus="i">
         <tr>
             <td>${i.index + 1}</td>
-            <td>${de3HoaDon.ma}</td>
-            <td>${de3HoaDon.ghiChu}</td>
-            <td>${de3HoaDon.trangThai == "1" ? "Dang hoat dong" : "Khong hoat dong"}</td>
-            <td>${de3HoaDon.de3KhachHang.ten}</td>
+            <td>${hoaDon.ma}</td>
+            <td>${hoaDon.ghiChu}</td>
+            <td>${hoaDon.trangThai == "1" ? "Dang hoat dong" : "Khong hoat dong"}</td>
+            <td>${hoaDon.khachHang.ten}</td>
             <td>
-                <a href="/hoa-don/detail1/${de3HoaDon.id}">
+                <a href="/hoa-don/detail1/${hoaDon.id}">
                     <button>Detail</button>
                 </a>
-                <a href="/hoa-don/remove1/${de3HoaDon.id}">
+                <a href="/hoa-don/remove1/${hoaDon.id}">
                     <button>Remove</button>
                 </a>
             </td>
@@ -54,16 +54,16 @@
 <%--QUAN LY KHACH HANG--%>
 <form action="/hoa-don/add" method="post">
     <p><h3>QUAN LY KHACH HANG</h3></p>
-    <p>Id: <input name="id" value="${de3KhachHang.id}" readonly></p>
-    <p>Ma: <input name="ma" value="${de3KhachHang.ma}"></p>
-    <p>Ten: <input name="ten" value="${de3KhachHang.ten}"></p>
-    <p>SDT: <input name="sdt" value="${de3KhachHang.sdt}"></p>
-    <p>Dia chi: <input name="diaChi" value="${de3KhachHang.diaChi}"></p>
+    <p>Id: <input name="id" value="${khachHang.id}" readonly></p>
+    <p>Ma: <input name="ma" value="${khachHang.ma}"></p>
+    <p>Ten: <input name="ten" value="${khachHang.ten}"></p>
+    <p>SDT: <input name="sdt" value="${khachHang.sdt}"></p>
+    <p>Dia chi: <input name="diaChi" value="${khachHang.diaChi}"></p>
     <p>Gioi tinh:
-        <input type="radio" name="gioiTinh" value="0" ${de3KhachHang.gioiTinh == 0 ? 'checked' : ''}> Nam
-        <input type="radio" name="gioiTinh" value="1" ${de3KhachHang.gioiTinh == 1 ? 'checked' : ''}> Nu
+        <input type="radio" name="gioiTinh" value="0" ${khachHang.gioiTinh == 0 ? 'checked' : ''}> Nam
+        <input type="radio" name="gioiTinh" value="1" ${khachHang.gioiTinh == 1 ? 'checked' : ''}> Nu
     </p>
-    <p>Trang thai: <input name="trangThai" value="${de3KhachHang.trangThai}"></p>
+    <p>Trang thai: <input name="trangThai" value="${khachHang.trangThai}"></p>
     <p><button type="submit">Add</button></p>
 </form>
 <table border="1">
@@ -77,20 +77,20 @@
         <th>Trang thai</th>
         <th>Action</th>
     </tr>
-    <c:forEach items="${listKhachHang}" var="de3KhachHang" varStatus="i">
+    <c:forEach items="${listKhachHang}" var="khachHang" varStatus="i">
         <tr>
             <td>${i.index + 1}</td>
-            <td>${de3KhachHang.ma}</td>
-            <td>${de3KhachHang.ten}</td>
-            <td>${de3KhachHang.sdt}</td>
-            <td>${de3KhachHang.diaChi}</td>
-            <td>${de3KhachHang.gioiTinh == 0 ? "Nam" : "Nu"}</td>
-            <td>${de3KhachHang.trangThai}</td>
+            <td>${khachHang.ma}</td>
+            <td>${khachHang.ten}</td>
+            <td>${khachHang.sdt}</td>
+            <td>${khachHang.diaChi}</td>
+            <td>${khachHang.gioiTinh == 0 ? "Nam" : "Nu"}</td>
+            <td>${khachHang.trangThai}</td>
             <td>
-                <a href="/hoa-don/detail/${de3KhachHang.id}">
+                <a href="/hoa-don/detail/${khachHang.id}">
                     <button>Detail</button>
                 </a>
-                <a href="/hoa-don/remove/${de3KhachHang.id}">
+                <a href="/hoa-don/remove/${khachHang.id}">
                     <button>Remove</button>
                 </a>
             </td>

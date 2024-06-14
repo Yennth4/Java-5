@@ -58,14 +58,14 @@ public class HoaDonController {
     }
 
     @PostMapping("add")
-    private String addKhachHang(De3_KhachHang de3KhachHang) {
-        khachHangService.save(de3KhachHang);
+    private String addKhachHang(De3_KhachHang khachHang) {
+        khachHangService.save(khachHang);
         return "redirect:/hoa-don/hien-thi";
     }
 
     @PostMapping("add1")
-    private String addHoaDon(De3_HoaDon de3HoaDon) {
-        hoaDonService.save(de3HoaDon);
+    private String addHoaDon(De3_HoaDon hoaDon) {
+        hoaDonService.save(hoaDon);
         return "redirect:/hoa-don/hien-thi";
     }
 }

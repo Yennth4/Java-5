@@ -40,5 +40,5 @@ public class De3_HoaDon {
 
     @ManyToOne
     @JoinColumn(name = "id_khach_hang" , referencedColumnName = "id")
-    private De3_KhachHang de3KhachHang;
+    private De3_KhachHang khachHang;
 }

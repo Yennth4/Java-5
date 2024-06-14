@@ -8,6 +8,7 @@
 <p>
 <h3>DONG SAN PHAM</h3></p>
 <form action="/dongSanPham/update" method="post">
+    <p>Id: <input name="id" value="${dongSanPham.id}" readonly></p>
     <p>Ma: <input name="ma" value="${dongSanPham.ma}"></p>
     <p>Ten: <input name="ten" value="${dongSanPham.ten}"></p>
     <p>

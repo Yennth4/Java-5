@@ -161,7 +161,7 @@ public class BanHangController {
     }
 
     // DETAIL
-    @GetMapping("chiTietSanPham/detail/{id}")
+    @GetMapping("chiTietSanPham/dchiTietSanPham/detail/{id}")
     private String detailChiTietSanPham(@PathVariable Integer id, Model model) {
         model.addAttribute("chiTietSanPham", serviceChiTietSanPham.findById(id).orElse(null));
         model.addAttribute("listMauSac", serviceMauSac.findAll());

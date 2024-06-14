@@ -62,18 +62,18 @@ public class ChucVuController {
     }
 
     @PostMapping("add")
-    private String addChucVu(@ModelAttribute De5_ChucVu de5ChucVu,
+    private String addChucVu(@ModelAttribute De5_ChucVu chucVu,
                              @RequestParam("ngayBatDau") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime ngayBatDau,
                              @RequestParam("denNgay") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime denNgay) {
-        de5ChucVu.setNgayBatDau(ngayBatDau);
-        de5ChucVu.setDenNgay(denNgay);
-        chucVuService.save(de5ChucVu);
+        chucVu.setNgayBatDau(ngayBatDau);
+        chucVu.setDenNgay(denNgay);
+        chucVuService.save(chucVu);
         return "redirect:/chuc-vu/hien-thi";
     }
 
     @PostMapping("add1")
-    private String addPhongBan(De5_PhongBan de5PhongBan) {
-        phongBanService.save(de5PhongBan);
+    private String addPhongBan(De5_PhongBan phongBan) {
+        phongBanService.save(phongBan);
         return "redirect:/chuc-vu/hien-thi";
     }
 }

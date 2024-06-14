@@ -7,6 +7,7 @@
 <body>
 <p><h3>MAU SAC</h3></p>
 <form action="/mauSac/update" method="post">
+    <p>Id: <input name="id" value="${mauSac.id}" readonly></p>
     <p>Ma: <input name="ma" value="${mauSac.ma}"></p>
     <p>Ten: <input name="ten" value="${mauSac.ten}"></p>
     <p><button type="submit">Update</button></p>

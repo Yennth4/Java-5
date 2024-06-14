@@ -8,6 +8,7 @@
 <body>
 <p><h3>GIO HANG CHI TIET</h3></p>
 <form action="/gioHangChiTiet/update" method="post">
+    <p>Id: <input name="id" value="${gioHangChiTiet.id}" readonly></p>
     <p>Gio hang:
         <select name="gioHang">
             <c:forEach items="${listGioHang}" var="gioHang">

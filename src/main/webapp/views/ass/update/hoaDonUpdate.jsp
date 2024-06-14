@@ -8,32 +8,33 @@
 <body>
 <p>
 <h3>HOA DON</h3></p>
-<form action="/de3HoaDon/update" method="post">
+<form action="/hoaDon/update" method="post">
+    <p>Id: <input name="id" value="${hoaDon.id}" readonly></p>
     <p>Khach hang:
-        <select name="de3KhachHang">
-            <c:forEach items="${listKhachHang}" var="de3KhachHang">
-                <option value="${de3KhachHang.id}" ${de3KhachHang.id == de3HoaDon.de3KhachHang.id ? 'selected' : ''}>${de3KhachHang.ten}</option>
+        <select name="khachHang">
+            <c:forEach items="${listKhachHang}" var="khachHang">
+                <option value="${khachHang.id}" ${khachHang.id == hoaDon.khachHang.id ? 'selected' : ''}>${khachHang.ten}</option>
             </c:forEach>
         </select>
     </p>
     <p>Nhan vien:
         <select name="nhanVien">
             <c:forEach items="${listNhanVien}" var="nhanVien">
-                <option value="${nhanVien.id}" ${nhanVien.id == de3HoaDon.nhanVien.id ? 'selected' : ''}>${nhanVien.ten}</option>
+                <option value="${nhanVien.id}" ${nhanVien.id == hoaDon.nhanVien.id ? 'selected' : ''}>${nhanVien.ten}</option>
             </c:forEach>
         </select>
     </p>
-    <p>Ma: <input name="ma" value="${de3HoaDon.ma}"></p>
+    <p>Ma: <input name="ma" value="${hoaDon.ma}"></p>
     <p>
-        Ngay tao: <input name="ngayTao" type="date" value="${de3HoaDon.ngayTao}">
+        Ngay tao: <input name="ngayTao" type="date" value="${hoaDon.ngayTao}">
     </p>
     <p>Tinh trang:
-        <input name="tinhTrang" type="radio" value="1" ${de3HoaDon.tinhTrang == 1 ? 'checked' : ''}> Thanh toan
-        <input name="tinhTrang" type="radio" value="0" ${de3HoaDon.tinhTrang == 0 ? 'checked' : ''}> Chua thanh toan
+        <input name="tinhTrang" type="radio" value="1" ${hoaDon.tinhTrang == 1 ? 'checked' : ''}> Thanh toan
+        <input name="tinhTrang" type="radio" value="0" ${hoaDon.tinhTrang == 0 ? 'checked' : ''}> Chua thanh toan
     </p>
-    <p>Ten: <input name="tenNguoiNhan" value="${de3HoaDon.tenNguoiNhan}"></p>
-    <p>Dia chi: <input name="diaChi" value="${de3HoaDon.diaChi}"></p>
-    <p>SDT: <input name="sdt" value="${de3HoaDon.sdt}"></p>
+    <p>Ten: <input name="tenNguoiNhan" value="${hoaDon.tenNguoiNhan}"></p>
+    <p>Dia chi: <input name="diaChi" value="${hoaDon.diaChi}"></p>
+    <p>SDT: <input name="sdt" value="${hoaDon.sdt}"></p>
     <p>
         <button type="submit">Update</button>
     </p>

@@ -7,11 +7,11 @@
 </head>
 <body>
 <p><h3>HOA DON</h3></p>
-<form action="/de3HoaDon/add" method="post">
+<form action="/hoaDon/add" method="post">
     <p>Khach hang:
-        <select name="de3KhachHang">
-            <c:forEach items="${listKhachHang}" var="de3KhachHang">
-                <option value="${de3KhachHang.id}">${de3KhachHang.ten}</option>
+        <select name="khachHang">
+            <c:forEach items="${listKhachHang}" var="khachHang">
+                <option value="${khachHang.id}">${khachHang.ten}</option>
             </c:forEach>
         </select>
     </p>

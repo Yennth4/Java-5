@@ -8,6 +8,7 @@
 <body>
 <p><h3>NHAN VIEN</h3></p>
 <form action="/nhanVien/update" method="post">
+    <p>Id: <input name="id" value="${nhanVien.id}" readonly></p>
     <p>Ma: <input name="ma" value="${nhanVien.ma}"></p>
     <p>Ten: <input name="ten" value="${nhanVien.ten}"></p>
     <p>Gioi tinh:

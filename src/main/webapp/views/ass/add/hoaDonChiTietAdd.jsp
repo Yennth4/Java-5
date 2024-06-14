@@ -9,9 +9,9 @@
 <p><h3>HOA DON CHI TIET</h3></p>
 <form action="/hoaDonChiTiet/add" method="post">
     <p>Hoa don:
-        <select name="de3HoaDon">
-            <c:forEach items="${listHoaDon}" var="de3HoaDon">
-                <option value="${de3HoaDon.id}">${de3HoaDon.ma}</option>
+        <select name="hoaDon">
+            <c:forEach items="${listHoaDon}" var="hoaDon">
+                <option value="${hoaDon.id}">${hoaDon.ma}</option>
             </c:forEach>
         </select>
     </p>

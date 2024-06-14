@@ -9,6 +9,7 @@
 <p>
 <h3>GIO HANG</h3></p>
 <form action="/gioHang/update" method="post">
+    <p>Id: <input name="id" value="${gioHang.id}" readonly></p>
     <p>Khach hang:
         <select name="de3KhachHang">
             <c:forEach items="${listKhachHang}" var="de3KhachHang">

@@ -7,19 +7,19 @@
 <body>
 <form action="/chuc-vu/add" method="post">
     <p><h3>QUAN LY CHUC VU</h3></p>
-    <p>Id: <input name="id" value="${de5ChucVu.id}" readonly></p>
-    <p>Ten: <input name="ten" value="${de5ChucVu.ten}"></p>
-    <p>Ngay bat dau: <input type="datetime-local" name="ngayBatDau" value="${de5ChucVu.ngayBatDau}"></p>
-    <p>Den ngay: <input type="datetime-local" name="denNgay" value="${de5ChucVu.denNgay}"></p>
-    <p>Ghi chu: <input name="ghiChu" value="${de5ChucVu.ghiChu}"></p>
+    <p>Id: <input name="id" value="${chucVu.id}" readonly></p>
+    <p>Ten: <input name="ten" value="${chucVu.ten}"></p>
+    <p>Ngay bat dau: <input type="datetime-local" name="ngayBatDau" value="${chucVu.ngayBatDau}"></p>
+    <p>Den ngay: <input type="datetime-local" name="denNgay" value="${chucVu.denNgay}"></p>
+    <p>Ghi chu: <input name="ghiChu" value="${chucVu.ghiChu}"></p>
     <p>Trang thai:
-        <input type="radio" name="trangThai" value="1" ${de5ChucVu.trangThai == "1" ? "checked" : ""}> Hoat dong
-        <input type="radio" name="trangThai" value="0" ${de5ChucVu.trangThai == "0" ? "checked" : ""}> Khong hoat dong
+        <input type="radio" name="trangThai" value="1" ${chucVu.trangThai == "1" ? "checked" : ""}> Hoat dong
+        <input type="radio" name="trangThai" value="0" ${chucVu.trangThai == "0" ? "checked" : ""}> Khong hoat dong
     </p>
     <p>Phong ban:
-        <select name="de5PhongBan">
-            <c:forEach items="${listPhongBan}" var="de5PhongBan">
-                <option value="${de5PhongBan.id}" ${de5PhongBan.id == de5ChucVu.de5PhongBan.id ? 'selected' : ''}>${de5PhongBan.ten}</option>
+        <select name="phongBan">
+            <c:forEach items="${listPhongBan}" var="phongBan">
+                <option value="${phongBan.id}" ${phongBan.id == chucVu.phongBan.id ? 'selected' : ''}>${phongBan.ten}</option>
             </c:forEach>
         </select>
     </p>
@@ -36,20 +36,20 @@
         <th>Phong ban</th>
         <th>Action</th>
     </tr>
-    <c:forEach items="${listChucVu}" var="de5ChucVu" varStatus="i">
+    <c:forEach items="${listChucVu}" var="chucVu" varStatus="i">
         <tr>
             <td>${i.index + 1}</td>
-            <td>${de5ChucVu.ten}</td>
-            <td>${de5ChucVu.ngayBatDau}</td>
-            <td>${de5ChucVu.denNgay}</td>
-            <td>${de5ChucVu.ghiChu}</td>
-            <td>${de5ChucVu.trangThai == "1" ? "Dang hoat dong" : "Khong hoat dong"}</td>
-            <td>${de5ChucVu.de5PhongBan.ten}</td>
+            <td>${chucVu.ten}</td>
+            <td>${chucVu.ngayBatDau}</td>
+            <td>${chucVu.denNgay}</td>
+            <td>${chucVu.ghiChu}</td>
+            <td>${chucVu.trangThai == "1" ? "Dang hoat dong" : "Khong hoat dong"}</td>
+            <td>${chucVu.phongBan.ten}</td>
             <td>
-                <a href="/chuc-vu/detail/${de5ChucVu.id}">
+                <a href="/chuc-vu/detail/${chucVu.id}">
                     <button>Detail</button>
                 </a>
-                <a href="/chuc-vu/remove/${de5ChucVu.id}">
+                <a href="/chuc-vu/remove/${chucVu.id}">
                     <button>Remove</button>
                 </a>
             </td>
@@ -60,8 +60,8 @@
 <%--QUAN LY PHONG BAN--%>
 <form action="/chuc-vu/add1" method="post">
     <p><h3>QUAN LY PHONG BAN</h3></p>
-    <p>Id: <input name="id" value="${de5PhongBan.id}" readonly></p>
-    <p>Ten: <input name="ten" value="${de5PhongBan.ten}"></p>
+    <p>Id: <input name="id" value="${phongBan.id}" readonly></p>
+    <p>Ten: <input name="ten" value="${phongBan.ten}"></p>
     <p><button type="submit">Add</button></p>
 </form>
 
@@ -71,15 +71,15 @@
         <th>Ten</th>
         <th>Action</th>
     </tr>
-    <c:forEach items="${listPhongBan}" var="de5PhongBan" varStatus="i">
+    <c:forEach items="${listPhongBan}" var="phongBan" varStatus="i">
         <tr>
             <td>${i.index + 1}</td>
-            <td>${de5PhongBan.ten}</td>
+            <td>${phongBan.ten}</td>
             <td>
-                <a href="/chuc-vu/detail1/${de5PhongBan.id}">
+                <a href="/chuc-vu/detail1/${phongBan.id}">
                     <button>Detail</button>
                 </a>
-                <a href="/chuc-vu/remove1/${de5PhongBan.id}">
+                <a href="/chuc-vu/remove1/${phongBan.id}">
                     <button>Remove</button>
                 </a>
             </td>

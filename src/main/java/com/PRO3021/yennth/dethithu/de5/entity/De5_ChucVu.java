@@ -47,5 +47,5 @@ public class De5_ChucVu {
 
     @ManyToOne
     @JoinColumn(name = "id_phong_ban", referencedColumnName = "id")
-    private De5_PhongBan de5PhongBan;
+    private De5_PhongBan phongBan;
 }

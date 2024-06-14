@@ -7,6 +7,7 @@
 <body>
 <p><h3>CUA HANG</h3></p>
 <form action="/cuaHang/update" method="post">
+    <p>Id: <input name="id" value="${cuaHang.id}" readonly></p>
     <p>Ma: <input name="ma" value="${cuaHang.ma}"></p>
     <p>Ten: <input name="ten" value="${cuaHang.ten}"></p>
     <p>Dia chi: <input name="diaChi" value="${cuaHang.diaChi}"></p>

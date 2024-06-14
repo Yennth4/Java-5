@@ -8,6 +8,7 @@
 <body>
 <p><h3>HOA DON CHI TIET</h3></p>
 <form action="/hoaDonChiTiet/update" method="post">
+    <p>Id: <input name="id" value="${hoaDonChiTiet.id}" readonly></p>
     <p>Hoa don:
         <select name="de3HoaDon">
             <c:forEach items="${listHoaDon}" var="de3HoaDon">
