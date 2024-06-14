@@ -1,4 +1,4 @@
-package com.PRO3021.yennth.dethithu.de1.enitty;
+package com.PRO3021.yennth.dethithu.de1.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -13,9 +13,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 @Entity
 @Getter
 @Setter
@@ -23,37 +20,20 @@ import java.util.Date;
 @NoArgsConstructor
 @Builder
 @ToString
-@Table(name = "dich_vu")
-public class DichVu {
+@Table(name = "loai_dich_vu")
+public class LoaiDichVu {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "loai_dich_vu_id")
-    private Integer loaiDichVuId;
-
-    @Column(name = "ma")
-    private String ma;
-
-    @Column(name = "ten")
+    @Column(name = "ten_loai_dich_vu")
     private String ten;
-
-    @Column(name = "don_vi_tinh")
-    private String donViTinh;
-
-    @Column(name = "don_gia")
-    private BigDecimal donGia;
 
     @Column(name = "mo_ta")
     private String moTa;
 
     @Column(name = "trang_thai")
-    private Integer trangThai;
+    private String trangThai;
 
-    @Column(name = "ngay_tao")
-    private Date ngayTao;
-
-    @Column(name = "ngay_chinh_sua")
-    private Date ngayChinhSua;
 }

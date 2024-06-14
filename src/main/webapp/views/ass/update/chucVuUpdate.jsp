@@ -6,9 +6,9 @@
 </head>
 <body>
 <p><h3>CHUC VU</h3></p>
-<form action="/chucVu/update" method="post">
-    <p>Ma: <input name="ma" value="${chucVu.ma}"></p>
-    <p>Ten: <input name="ten" value="${chucVu.ten}"></p>
+<form action="/de5ChucVu/update" method="post">
+    <p>Ma: <input name="ma" value="${de5ChucVu.ma}"></p>
+    <p>Ten: <input name="ten" value="${de5ChucVu.ten}"></p>
     <p><button type="submit">Update</button></p>
 </form>
 </body>

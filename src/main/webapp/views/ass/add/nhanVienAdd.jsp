@@ -28,7 +28,7 @@
         </select>
     </p>
     <p>Chuc vu:
-        <select name="chucVu">
+        <select name="de5ChucVu">
             <c:forEach items="${listChucVu}" var="cv">
                 <option value="${cv.id}">${cv.ten}</option>
             </c:forEach>

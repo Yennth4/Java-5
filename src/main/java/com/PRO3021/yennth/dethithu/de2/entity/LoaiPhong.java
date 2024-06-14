@@ -1,4 +1,4 @@
-package com.PRO3021.yennth.ass.entity;
+package com.PRO3021.yennth.dethithu.de2.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -13,29 +13,20 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-import java.time.LocalDateTime;
-
 @Entity
-@Table(name = "De5_ChucVu")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 @ToString
-
-public class ChucVu {
+@Table(name = "loai_phong")
+public class LoaiPhong {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "Ma")
-    private String ma;
-
-    @Column(name = "Ten")
+    @Column(name = "ten_loai_phong")
     private String ten;
-
-    public void setNgayBatDau(LocalDateTime ngayBatDau) {
-    }
 }

@@ -121,7 +121,7 @@
 <table border="1">
     <p>
     <h3>DANH SACH CHUC VU</h3></p>
-    <p><a href="/chucVu/view-add">
+    <p><a href="/de5ChucVu/view-add">
         <button>ADD</button>
     </a></p>
     <thead>
@@ -131,19 +131,19 @@
     <th>Action</th>
     </thead>
     <tbody>
-    <c:forEach items="${listChucVu}" var="chucVu" varStatus="i">
+    <c:forEach items="${listChucVu}" var="de5ChucVu" varStatus="i">
         <tr>
             <td>${i.index + 1}</td>
-            <td>${chucVu.ma}</td>
-            <td>${chucVu.ten}</td>
+            <td>${de5ChucVu.ma}</td>
+            <td>${de5ChucVu.ten}</td>
             <td>
-                <a href="/chucVu/detail/${chucVu.id}">
+                <a href="/de5ChucVu/detail/${de5ChucVu.id}">
                     <button>Detail</button>
                 </a>
-                <a href="/chucVu/view-update/${chucVu.id}">
+                <a href="/de5ChucVu/view-update/${de5ChucVu.id}">
                     <button>Edit</button>
                 </a>
-                <a href="/chucVu/remove/${chucVu.id}">
+                <a href="/de5ChucVu/remove/${de5ChucVu.id}">
                     <button>Delete</button>
                 </a>
             </td>
@@ -199,7 +199,7 @@
 <table border="1">
     <p>
     <h3>DANH SACH KHACH HANG</h3></p>
-    <p><a href="/khachHang/view-add">
+    <p><a href="/de3KhachHang/view-add">
         <button>ADD</button>
     </a></p>
     <thead>
@@ -215,25 +215,25 @@
     <th>Action</th>
     </thead>
     <tbody>
-    <c:forEach items="${listKhachHang}" var="khachHang" varStatus="i">
+    <c:forEach items="${listKhachHang}" var="de3KhachHang" varStatus="i">
         <tr>
             <td>${i.index + 1}</td>
-            <td>${khachHang.ma}</td>
-            <td>${khachHang.ten} ${khachHang.tenDem} ${khachHang.ho}</td>
-            <td>${khachHang.ngaySinh}</td>
-            <td>${khachHang.sdt}</td>
-            <td>${khachHang.diaChi}</td>
-            <td>${khachHang.thanhPho}</td>
-            <td>${khachHang.quocGia}</td>
-            <td>${khachHang.matKhau}</td>
+            <td>${de3KhachHang.ma}</td>
+            <td>${de3KhachHang.ten} ${de3KhachHang.tenDem} ${de3KhachHang.ho}</td>
+            <td>${de3KhachHang.ngaySinh}</td>
+            <td>${de3KhachHang.sdt}</td>
+            <td>${de3KhachHang.diaChi}</td>
+            <td>${de3KhachHang.thanhPho}</td>
+            <td>${de3KhachHang.quocGia}</td>
+            <td>${de3KhachHang.matKhau}</td>
             <td>
-                <a href="/khachHang/detail/${khachHang.id}">
+                <a href="/de3KhachHang/detail/${de3KhachHang.id}">
                     <button>Detail</button>
                 </a>
-                <a href="/khachHang/view-update/${khachHang.id}">
+                <a href="/de3KhachHang/view-update/${de3KhachHang.id}">
                     <button>Edit</button>
                 </a>
-                <a href="/khachHang/remove/${khachHang.id}">
+                <a href="/de3KhachHang/remove/${de3KhachHang.id}">
                     <button>Delete</button>
                 </a>
             </td>
@@ -275,7 +275,7 @@
             <td>${nhanVien.sdt}</td>
             <td>${nhanVien.matKhau}</td>
             <td>${nhanVien.cuaHang.ten}</td>
-            <td>${nhanVien.chucVu.ten}</td>
+            <td>${nhanVien.de5ChucVu.ten}</td>
             <td>${nhanVien.trangThai == 1 ? "On" : "Off"}</td>
             <td>
                 <a href="/nhanVien/detail/${nhanVien.id}">
@@ -366,7 +366,7 @@
     <c:forEach items="${listGioHang}" var="gioHang" varStatus="i">
         <tr>
             <td>${i.index + 1}</td>
-            <td>${gioHang.khachHang.ten}</td>
+            <td>${gioHang.de3KhachHang.ten}</td>
             <td>${gioHang.nhanVien.ten}</td>
             <td>${gioHang.ma}</td>
             <td>${gioHang.ngayTao}</td>
@@ -396,7 +396,7 @@
 <table border="1">
     <p>
     <h3>DANH SACH HOA DON</h3></p>
-    <p><a href="/hoaDon/view-add">
+    <p><a href="/de3HoaDon/view-add">
         <button>ADD</button>
     </a></p>
     <thead>
@@ -415,28 +415,28 @@
     <th>Action</th>
     </thead>
     <tbody>
-    <c:forEach items="${listHoaDon}" var="hoaDon" varStatus="i">
+    <c:forEach items="${listHoaDon}" var="de3HoaDon" varStatus="i">
         <tr>
             <td>${i.index + 1}</td>
-            <td>${hoaDon.khachHang.ten}</td>
-            <td>${hoaDon.nhanVien.ten}</td>
-            <td>${hoaDon.ma}</td>
-            <td>${hoaDon.ngayTao}</td>
-            <td>${hoaDon.ngayThanhToan} null</td>
-            <td>${hoaDon.ngayShip} null</td>
-            <td>${hoaDon.ngayNhan} null</td>
-            <td>${hoaDon.tinhTrang == 1 ? "Da thanh toan" : "Chua thanh toan"}</td>
-            <td>${hoaDon.tenNguoiNhan}</td>
-            <td>${hoaDon.diaChi}</td>
-            <td>${hoaDon.sdt}</td>
+            <td>${de3HoaDon.de3KhachHang.ten}</td>
+            <td>${de3HoaDon.nhanVien.ten}</td>
+            <td>${de3HoaDon.ma}</td>
+            <td>${de3HoaDon.ngayTao}</td>
+            <td>${de3HoaDon.ngayThanhToan} null</td>
+            <td>${de3HoaDon.ngayShip} null</td>
+            <td>${de3HoaDon.ngayNhan} null</td>
+            <td>${de3HoaDon.tinhTrang == 1 ? "Da thanh toan" : "Chua thanh toan"}</td>
+            <td>${de3HoaDon.tenNguoiNhan}</td>
+            <td>${de3HoaDon.diaChi}</td>
+            <td>${de3HoaDon.sdt}</td>
             <td>
-                <a href="/hoaDon/detail/${hoaDon.id}">
+                <a href="/de3HoaDon/detail/${de3HoaDon.id}">
                     <button>Detail</button>
                 </a>
-                <a href="/hoaDon/view-update/${hoaDon.id}">
+                <a href="/de3HoaDon/view-update/${de3HoaDon.id}">
                     <button>Edit</button>
                 </a>
-                <a href="/hoaDon/remove/${hoaDon.id}">
+                <a href="/de3HoaDon/remove/${de3HoaDon.id}">
                     <button>Delete</button>
                 </a>
             </td>
@@ -466,7 +466,7 @@
     <c:forEach items="${listHoaDonChiTiet}" var="hoaDonChiTiet" varStatus="i">
         <tr>
             <td>${i.index + 1}</td>
-            <td>${hoaDonChiTiet.hoaDon.ma}</td>
+            <td>${hoaDonChiTiet.de3HoaDon.ma}</td>
             <td>${hoaDonChiTiet.gioHang.ma}</td>
             <td>${hoaDonChiTiet.chiTietSanPham.id}</td>
             <td>${hoaDonChiTiet.soLuong}</td>

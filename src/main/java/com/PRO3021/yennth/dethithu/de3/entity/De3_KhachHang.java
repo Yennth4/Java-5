@@ -1,4 +1,4 @@
-package com.PRO3021.yennth.ass.entity;
+package com.PRO3021.yennth.dethithu.de3.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -13,51 +13,35 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-import java.sql.Date;
-
 @Entity
-@Table(name = "De3_KhachHang")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 @ToString
-
-public class KhachHang {
+@Table(name = "khach_hang")
+public class De3_KhachHang {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "Ma")
+    @Column(name = "ma_khach_hang")
     private String ma;
 
-    @Column(name = "Ten")
+    @Column(name = "ten_khach_hang")
     private String ten;
 
-    @Column(name = "TenDem")
-    private String tenDem;
-
-    @Column(name = "Ho")
-    private String ho;
-
-    @Column(name = "NgaySinh")
-    private Date ngaySinh;
-
-    @Column(name = "Sdt")
+    @Column(name = "so_dien_thoai")
     private String sdt;
 
-    @Column(name = "DiaChi")
+    @Column(name = "dia_chi")
     private String diaChi;
 
-    @Column(name = "ThanhPho")
-    private String thanhPho;
+    @Column(name = "gioi_tinh")
+    private Integer gioiTinh;
 
-    @Column(name = "QuocGia")
-    private String quocGia;
-
-    @Column(name = "MatKhau")
-    private String matKhau;
-
+    @Column(name = "trang_thai")
+    private String trangThai;
 }

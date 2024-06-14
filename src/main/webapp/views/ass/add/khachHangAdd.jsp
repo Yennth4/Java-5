@@ -7,7 +7,7 @@
 <body>
 <p>
 <h3>KHACH HANG</h3></p>
-<form action="/khachHang/add" method="post">
+<form action="/de3KhachHang/add" method="post">
     <p>Ma: <input name="ma"></p>
     <p>Ten: <input name="ten"></p>
     <p>Ngay sinh: <input name="ngaySinh" type="date"></p>

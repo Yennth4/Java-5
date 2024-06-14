@@ -1,4 +1,4 @@
-package com.PRO3021.yennth.dethithu.de1.enitty;
+package com.PRO3021.yennth.dethithu.de3.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -14,7 +14,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
-import java.util.Date;
 
 @Entity
 @Getter
@@ -23,38 +22,23 @@ import java.util.Date;
 @NoArgsConstructor
 @Builder
 @ToString
-@Table(name = "dich_vu_su_dung")
-public class DichVuSuDung {
+@Table(name = "hoa_don")
+public class De3_HoaDon {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @ManyToOne
-    @JoinColumn(name = "dich_vu_id", referencedColumnName = "id")
-    private DichVu dichVu;
-
-    @Column(name = "chi_tiet_hoa_don_id")
-    private Integer chiTietHoaDonId;
-
-    @Column(name = "ma")
+    @Column(name = "ma_hoa_don")
     private String ma;
-
-    @Column(name = "ten")
-    private String ten;
-
-    @Column(name = "so_luong")
-    private Integer soLuong;
 
     @Column(name = "ghi_chu")
     private String ghiChu;
 
     @Column(name = "trang_thai")
-    private Integer trangThai;
+    private String trangThai;
 
-    @Column(name = "ngay_tao")
-    private Date ngayTao;
-
-    @Column(name = "ngay_chinh_sua")
-    private Date ngayChinhSua;
+    @ManyToOne
+    @JoinColumn(name = "id_khach_hang" , referencedColumnName = "id")
+    private De3_KhachHang de3KhachHang;
 }

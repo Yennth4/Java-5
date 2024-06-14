@@ -28,9 +28,9 @@
         </select>
     </p>
     <p>Chuc vu:
-        <select name="chucVu">
+        <select name="de5ChucVu">
             <c:forEach items="${listChucVu}" var="cv">
-                <option value="${cv.id}" ${cv.id == nhanVien.chucVu.id ? 'selected' : ''}>${cv.ten}</option>
+                <option value="${cv.id}" ${cv.id == nhanVien.de5ChucVu.id ? 'selected' : ''}>${cv.ten}</option>
             </c:forEach>
         </select>
     </p>

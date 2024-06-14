@@ -9,9 +9,9 @@
 <p><h3>GIO HANG</h3></p>
 <form action="/gioHang/add" method="post">
     <p>Khach hang:
-        <select name="khachHang">
-            <c:forEach items="${listKhachHang}" var="khachHang">
-                <option value="${khachHang.id}">${khachHang.ten}</option>
+        <select name="de3KhachHang">
+            <c:forEach items="${listKhachHang}" var="de3KhachHang">
+                <option value="${de3KhachHang.id}">${de3KhachHang.ten}</option>
             </c:forEach>
         </select>
     </p>

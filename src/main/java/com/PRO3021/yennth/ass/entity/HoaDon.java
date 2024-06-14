@@ -18,7 +18,7 @@ import lombok.ToString;
 import java.sql.Date;
 
 @Entity
-@Table(name = "HoaDon")
+@Table(name = "De3_HoaDon")
 @Getter
 @Setter
 @AllArgsConstructor

@@ -1,10 +1,12 @@
-package com.PRO3021.yennth.ass.entity;
+package com.PRO3021.yennth.dethithu.de5.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -12,30 +14,38 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
-
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "De5_ChucVu")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 @ToString
-
-public class ChucVu {
+@Table(name = "chuc_vu")
+public class De5_ChucVu {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "Ma")
-    private String ma;
-
-    @Column(name = "Ten")
+    @Column(name = "ten_chuc_vu")
     private String ten;
 
-    public void setNgayBatDau(LocalDateTime ngayBatDau) {
-    }
+    @Column(name = "den_ngay")
+    private LocalDateTime denNgay;
+
+    @Column(name = "ngay_bat_dau_ap_dung")
+    private LocalDateTime ngayBatDau;
+
+    @Column(name = "ghi_chu")
+    private String ghiChu;
+
+    @Column(name = "trang_thai")
+    private String trangThai;
+
+    @ManyToOne
+    @JoinColumn(name = "id_phong_ban", referencedColumnName = "id")
+    private De5_PhongBan de5PhongBan;
 }

@@ -6,7 +6,7 @@
 </head>
 <body>
 <p><h3>CHUC VU</h3></p>
-<form action="/chucVu/add" method="post">
+<form action="/de5ChucVu/add" method="post">
     <p>Ma: <input name="ma"></p>
     <p>Ten: <input name="ten"></p>
     <p><button type="submit">ADD</button></p>
