@@ -1,4 +1,4 @@
-package com.PRO3021.yennth.ass.entity;
+package com.PRO3021.yennth.dethithu.de4.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -7,33 +7,22 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import lombok.ToString;
-
-import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "De5_ChucVu")
-@Getter
-@Setter
+@Table(name = "phong_ban")
+@Getter@Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
-@ToString
-
-public class ChucVu {
+public class de4_PhongBan {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column
     private Integer id;
 
-    @Column(name = "Ma")
-    private String ma;
-
-    @Column(name = "Ten")
-    private String ten;
-
+    @Column(name = "ten_phong_ban")
+    private String tenPhong;
 }

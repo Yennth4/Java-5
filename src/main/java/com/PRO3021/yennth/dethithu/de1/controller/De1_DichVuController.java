@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/dich-vu/")
-public class DichVuController {
+public class De1_DichVuController {
 
     @Autowired
     private IDichVu dichVuService;

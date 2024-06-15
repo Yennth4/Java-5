@@ -18,7 +18,7 @@ import java.time.LocalDateTime;
 
 @Controller
 @RequestMapping("/chuc-vu/")
-public class ChucVuController {
+public class De5_ChucVuController {
 
     @Autowired
     private ChucVuService chucVuService;

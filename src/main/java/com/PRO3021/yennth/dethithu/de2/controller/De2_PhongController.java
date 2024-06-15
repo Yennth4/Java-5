@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/phong/")
-public class PhongController {
+public class De2_PhongController {
 
     @Autowired
     private IPhong phongService;
