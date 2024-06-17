@@ -32,20 +32,24 @@ public class DichVu {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @NotBlank(message = "Ten khong de trong")
-    @Column(name = "ten_dich_vu")
-    private String ten;
-
     @ManyToOne
-    @JoinColumn(name = "id_loai_dich_vu" , referencedColumnName = "id")
+    @JoinColumn(name = "id_loai_dich_vu")
     private LoaiDichVu loaiDichVu;
 
-    @NotBlank(message = "Don vi khong de trong")
+    @NotBlank(message = "Don vi tien khong duoc trong")
     @Column(name = "don_vi_tien")
     private String donViTien;
 
-    @NotNull(message = "Don gia khong de trong")
-    @Min(10)
-    @Column(name = "don_gia")
-    private Double donGia;
+    @NotBlank(message = "Don gia khong duoc trong")
+    @Min(value = 10 , message = "Khong duoi 10")
+    @Column(name = "don_vi_tinh")
+    private String donGia;
+
+    @NotBlank(message = "Ten khong duoc trong")
+    @Column(name = "ten_dich_vu")
+    private String ten;
+
+    @Column(name = "trang_thai")
+    private String trangThai;
+
 }
