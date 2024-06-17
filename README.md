@@ -47,3 +47,5 @@ spring.mvc.view.suffix: .jsp
 ```
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 ```
+
+## https://github.com/Yennth4/Java-5-BTVN : Đề thi thử và các đề BTVN 
