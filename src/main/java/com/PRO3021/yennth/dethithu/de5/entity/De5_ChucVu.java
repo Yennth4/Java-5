@@ -14,6 +14,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+
 import java.time.LocalDateTime;
 
 @Entity
@@ -24,7 +25,7 @@ import java.time.LocalDateTime;
 @Builder
 @ToString
 @Table(name = "chuc_vu")
-public class De5_ChucVu {
+public class de5_ChucVu {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -47,5 +48,5 @@ public class De5_ChucVu {
 
     @ManyToOne
     @JoinColumn(name = "id_phong_ban", referencedColumnName = "id")
-    private De5_PhongBan phongBan;
+    private de5_PhongBan phongBan;
 }

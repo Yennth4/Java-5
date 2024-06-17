@@ -5,7 +5,12 @@
     <title>De 5 - Chuc vu</title>
 </head>
 <body>
-<form action="/chuc-vu/add" method="post">
+<form action="/chuc-vu2/hien-thi" method="get">
+    <p>Ten chuc vu: <input name="keyword"></p>
+    <p><button>Search</button></p>
+</form>
+
+<form action="/chuc-vu2/add" method="post">
     <p><h3>QUAN LY CHUC VU</h3></p>
     <p>Id: <input name="id" value="${chucVu.id}" readonly></p>
     <p>Ten: <input name="ten" value="${chucVu.ten}"></p>
@@ -36,7 +41,7 @@
         <th>Phong ban</th>
         <th>Action</th>
     </tr>
-    <c:forEach items="${listChucVu}" var="chucVu" varStatus="i">
+    <c:forEach items="${listChucVu.content}" var="chucVu" varStatus="i">
         <tr>
             <td>${i.index + 1}</td>
             <td>${chucVu.ten}</td>
@@ -46,10 +51,10 @@
             <td>${chucVu.trangThai == "1" ? "Dang hoat dong" : "Khong hoat dong"}</td>
             <td>${chucVu.phongBan.ten}</td>
             <td>
-                <a href="/chuc-vu/detail/${chucVu.id}">
+                <a href="/chuc-vu2/detail/${chucVu.id}">
                     <button>Detail</button>
                 </a>
-                <a href="/chuc-vu/remove/${chucVu.id}">
+                <a href="/chuc-vu2/remove/${chucVu.id}">
                     <button>Remove</button>
                 </a>
             </td>
@@ -58,7 +63,7 @@
 </table>
 
 <%--QUAN LY PHONG BAN--%>
-<form action="/chuc-vu/add1" method="post">
+<form action="/chuc-vu2/add1" method="post">
     <p><h3>QUAN LY PHONG BAN</h3></p>
     <p>Id: <input name="id" value="${phongBan.id}" readonly></p>
     <p>Ten: <input name="ten" value="${phongBan.ten}"></p>
@@ -76,10 +81,10 @@
             <td>${i.index + 1}</td>
             <td>${phongBan.ten}</td>
             <td>
-                <a href="/chuc-vu/detail1/${phongBan.id}">
+                <a href="/chuc-vu2/detail1/${phongBan.id}">
                     <button>Detail</button>
                 </a>
-                <a href="/chuc-vu/remove1/${phongBan.id}">
+                <a href="/chuc-vu2/remove1/${phongBan.id}">
                     <button>Remove</button>
                 </a>
             </td>

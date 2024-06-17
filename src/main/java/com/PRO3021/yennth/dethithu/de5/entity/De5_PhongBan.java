@@ -21,7 +21,7 @@ import lombok.ToString;
 @Builder
 @ToString
 @Table(name = "phong_ban")
-public class De5_PhongBan {
+public class de5_PhongBan {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
