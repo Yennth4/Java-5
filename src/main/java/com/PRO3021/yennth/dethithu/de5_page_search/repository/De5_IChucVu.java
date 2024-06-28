@@ -1,6 +1,6 @@
-package com.PRO3021.yennth.dethithu.de5.repository;
+package com.PRO3021.yennth.dethithu.de5_page_search.repository;
 
-import com.PRO3021.yennth.dethithu.de5.entity.de5_ChucVu;
+import com.PRO3021.yennth.dethithu.de5_page_search.entity.de5_ChucVu;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.jpa.repository.JpaRepository;

@@ -1,4 +1,4 @@
-package com.PRO3021.yennth.dethithu.de4.entity;
+package com.PRO3021.yennth.dethithu.de4_native.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

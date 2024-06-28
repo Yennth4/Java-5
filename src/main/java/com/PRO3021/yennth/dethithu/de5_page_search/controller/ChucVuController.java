@@ -1,9 +1,9 @@
-package com.PRO3021.yennth.dethithu.de5.controller;
+package com.PRO3021.yennth.dethithu.de5_page_search.controller;
 
-import com.PRO3021.yennth.dethithu.de5.entity.de5_ChucVu;
-import com.PRO3021.yennth.dethithu.de5.entity.de5_PhongBan;
-import com.PRO3021.yennth.dethithu.de5.repository.De5_IChucVu;
-import com.PRO3021.yennth.dethithu.de5.repository.De5_IPhongBan;
+import com.PRO3021.yennth.dethithu.de5_page_search.entity.de5_ChucVu;
+import com.PRO3021.yennth.dethithu.de5_page_search.entity.de5_PhongBan;
+import com.PRO3021.yennth.dethithu.de5_page_search.repository.De5_IChucVu;
+import com.PRO3021.yennth.dethithu.de5_page_search.repository.De5_IPhongBan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.format.annotation.DateTimeFormat;

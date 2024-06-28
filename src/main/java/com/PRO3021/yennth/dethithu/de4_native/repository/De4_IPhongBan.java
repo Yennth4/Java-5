@@ -1,6 +1,6 @@
-package com.PRO3021.yennth.dethithu.de4.repository;
+package com.PRO3021.yennth.dethithu.de4_native.repository;
 
-import com.PRO3021.yennth.dethithu.de4.entity.de4_PhongBan;
+import com.PRO3021.yennth.dethithu.de4_native.entity.de4_PhongBan;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
